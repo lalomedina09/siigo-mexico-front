@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Siigo Fiscal | Control y Conciliación SAT</title>
+  <!-- Google Fonts Nunito -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #ffffff;
+      color: #37465b;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Colores correctos */
+    :root {
+      --azul-base: #009dfe;
+      --verde-base: #7ac23a;
+      --gris-azulado: #37465b;
+    }
+
+    /* Top bar con países */
+    .top-bar {
+      background-color: #009dfe;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px 0;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .top-countries {
+      display: flex;
+      gap: 20px;
+    }
+    .top-countries a {
+      text-decoration: none;
+      color: var(--gris-azulado);
+      font-weight: 600;
+    }
+    .top-links {
+      display: flex;
+      gap: 28px;
+    }
+    .top-links a {
+      text-decoration: none;
+      color: var(--gris-azulado);
+      font-weight: 600;
+    }
+    .top-phone {
+      color: var(--azul-base);
+      font-weight: 800;
+    }
+
+    /* Header principal */
+    .main-header {
+      background: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--azul-base);
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--gris-azulado);
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+    .nav-links a:hover { color: var(--azul-base); }
+    .badge-new {
+      background: var(--verde-base);
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 5px;
+    }
+    .btn-outline {
+      border: 1.5px solid var(--azul-base);
+      background: transparent;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 800;
+      color: var(--azul-base);
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+    }
+    .btn-green {
+      background: var(--verde-base);
+      border: none;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 800;
+      color: white;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+    }
+    .mobile-menu-icon {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--azul-base);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+      padding: 60px 0;
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-content { flex: 1; }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--gris-azulado);
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--azul-base); }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    .hero-image { flex: 1; text-align: center; }
+
+    /* Tarjetas con icono + título inline */
+    .card-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .card-row i {
+      font-size: 2rem;
+      color: var(--azul-base);
+    }
+    .card-row h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0;
+      color: var(--gris-azulado);
+    }
+    .btn-small-blue {
+      background: var(--azul-base);
+      border: none;
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    /* Sección quién puede beneficiarse - 2 columnas offset */
+    .benefit-two-col {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .benefit-card {
+      background: #f5f7fa;
+      border-radius: 28px;
+      padding: 32px;
+      flex: 1;
+      min-width: 280px;
+    }
+    .benefit-card h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 16px 0;
+    }
+
+    /* Radio buttons (funcionalidades) */
+    .feature-radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .feature-radio {
+      background: #f1f5f9;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--gris-azulado);
+    }
+    .feature-radio.active {
+      background: var(--azul-base);
+      color: white;
+    }
+    .feature-detail-panel {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .feature-img {
+      flex: 1;
+      text-align: center;
+    }
+    .feature-info {
+      flex: 1;
+    }
+    .feature-info h4 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: black;
+      margin-bottom: 20px;
+    }
+    .feature-info ul {
+      list-style: none;
+    }
+    .feature-info li {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .feature-info li i {
+      background: var(--verde-base);
+      color: white;
+      border-radius: 50%;
+      padding: 4px;
+      font-size: 0.8rem;
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Pricing tabs + cards grid */
+    .pricing-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .tab-btn {
+      padding: 10px 32px;
+      border-radius: 40px;
+      font-weight: 800;
+      background: #f1f5f9;
+      cursor: pointer;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+    }
+    .tab-btn.active {
+      background: var(--azul-base);
+      color: white;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .price-card {
+      border: 2px solid var(--azul-base);
+      border-radius: 32px;
+      padding: 28px;
+      background: white;
+      transition: 0.2s;
+    }
+    .new-badge {
+      background: var(--azul-base);
+      color: white;
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      margin-bottom: 16px;
+    }
+    .price-card h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 10px 0;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    .discount-badge {
+      background: #f97316;
+      color: white;
+      border-radius: 20px;
+      padding: 2px 12px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .current-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--gris-azulado);
+      margin: 12px 0 4px;
+    }
+    .year-price {
+      font-size: 0.9rem;
+      color: #5b6e8c;
+    }
+    .price-feature-list {
+      list-style: none;
+      margin: 24px 0;
+    }
+    .price-feature-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+    .price-feature-list li i {
+      color: var(--verde-base);
+      font-size: 1rem;
+    }
+    .btn-comprar {
+      background: var(--verde-base);
+      width: 100%;
+      padding: 12px;
+      border-radius: 40px;
+      font-weight: 800;
+      color: white;
+      border: none;
+      margin: 16px 0 12px;
+      cursor: pointer;
+    }
+    .btn-asesor-outline {
+      width: 100%;
+      background: transparent;
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      border-radius: 40px;
+      font-weight: 800;
+      color: var(--azul-base);
+      cursor: pointer;
+    }
+
+    /* Sección fondo degradado */
+    .gradient-section {
+      background: linear-gradient(90deg, #7ac23a 0%, #e0f7e8 100%);
+      border-radius: 48px;
+      margin: 60px auto;
+      overflow: hidden;
+    }
+    .gradient-inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .gradient-img {
+      flex: 1;
+      padding: 40px;
+    }
+    .gradient-text {
+      flex: 1;
+      padding: 40px;
+    }
+    .gradient-text h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1e2f3e;
+    }
+    .btn-azul {
+      background: var(--azul-base);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      border: none;
+      font-weight: 800;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: white;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      border: 1px solid #e2e8f0;
+    }
+    .faq-question {
+      padding: 20px 28px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+    .faq-answer {
+      padding: 0 28px 20px 28px;
+      display: none;
+    }
+    .faq-item.active .faq-answer { display: block; }
+
+    /* Footer */
+    footer {
+      background: var(--azul-base);
+      color: #cbd5e1;
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 32px;
+    }
+    .footer-col a {
+      display: block;
+      color: #cbd5e6;
+      text-decoration: none;
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; width: 100%; flex-direction: column; gap: 16px; margin-top: 20px; }
+      .nav-links.show { display: flex; }
+      .mobile-menu-icon { display: block; }
+      .container { padding: 0 24px; }
+      .hero h1 { font-size: 2rem; }
+    }
+    button { background: none; border: none; cursor: pointer; font-family: 'Nunito', sans-serif; }
+    .section { padding: 70px 0; }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--gris-azulado);
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR: países + soporte -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-countries">
+      <a href="#">México</a>
+      <a href="#">Colombia</a>
+      <a href="#">Chile</a>
+      <a href="#">Ecuador</a>
+      <a href="#">Perú</a>
+      <a href="#">Uruguay</a>
+    </div>
+    <div class="top-links">
+      <a href="#">SOPORTE</a>
+      <a href="#">DISTRIBUIDOR</a>
+      <a href="#" class="top-phone">(+52) 558 890 2216</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER con menú -->
+<div class="main-header">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">Siigo <span style="color:#7ac23a">Fiscal</span></div>
+      <div class="mobile-menu-icon" id="mobileMenuToggle"><i class="fas fa-bars"></i></div>
+      <div class="nav-links" id="navLinks">
+        <a href="#">Planes y precios</a>
+        <a href="#">Soluciones</a>
+        <a href="#">Prueba gratis</a>
+        <a href="#">Contadores</a>
+        <a href="#">Blog</a>
+        <a href="#">📢 Siigo Fiscal <span class="badge-new">🆕</span></a>
+        <a href="#">Crear cuenta</a>
+        <a href="#">Iniciar sesión</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO: Por qué elegir Siigo Fiscal -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1>¿Por qué elegir <span>Siigo Fiscal</span>?</h1>
+        <p>Automatiza la conciliación con los visores del SAT, valida tus CFDI's y recibe alarmas fiscales, ¡en cualquier sistema contable!</p>
+        <button class="btn-green" id="heroCta">Prueba Siigo Fiscal gratis <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="hero-image">
+        <svg width="260" height="200" viewBox="0 0 260 200" fill="none"><rect x="30" y="60" width="200" height="100" rx="20" fill="#E6F4FF" stroke="#009dfe" stroke-width="2"/><circle cx="85" cy="100" r="8" fill="#7ac23a"/><circle cx="130" cy="100" r="8" fill="#7ac23a"/><circle cx="175" cy="100" r="8" fill="#7ac23a"/><path d="M60 150 L200 150" stroke="#009dfe" stroke-width="2" stroke-dasharray="5 3"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tarjetas beneficios (icono + título inline) -->
+<div class="section">
+  <div class="container">
+    <div class="grid-3" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:32px">
+      <div class="card" style="background:white; border-radius:24px; padding:28px; box-shadow:0 5px 20px rgba(0,0,0,0.03)">
+        <div class="card-row"><i class="fas fa-cloud-upload-alt"></i><h3>Simplifica la conciliación con el SAT</h3></div>
+        <p>Sincroniza diariamente tus CFDI's de hasta 5 años con el visor del SAT. Descarga, valida y organiza automáticamente con filtros por tipo, periodo o ejercicio fiscal.</p>
+      </div>
+      <div class="card"><div class="card-row"><i class="fas fa-file-invoice-dollar"></i><h3>Control sobre tus CFDI's</h3></div>
+        <p>Revisa de forma inmediata que tus CFDI's cumplan con los requisitos fiscales de la guía 4.0: detecta errores y CFDI's cancelados, recibe notificaciones.</p>
+      </div>
+      <div class="card"><div class="card-row"><i class="fas fa-gavel"></i><h3>Evita multas por materialidad</h3></div>
+        <p>Detecta inconsistencias a tiempo, evita multas y mejora el control fiscal, compatible con cualquier sistema contable.</p>
+      </div>
+      <div class="card"><div class="card-row"><i class="fas fa-calculator"></i><h3>Cálculo del IVA e ISR</h3></div>
+        <p>Calcula automáticamente el pago de impuestos con base en los CFDI's del SAT, complementos de pago y notas de crédito.</p>
+      </div>
+      <div class="card"><div class="card-row"><i class="fas fa-shield-alt"></i><h3>Prevención de riesgos con EFOS</h3></div>
+        <p>Monitoreo diario de la lista de Empresas que Facturan Operaciones Simuladas (EFOS) del SAT.</p>
+      </div>
+      <div class="card"><div class="card-row"><i class="fas fa-flask"></i><h3>Prueba Siigo Fiscal gratis</h3></div>
+        <p>Evalúa funcionalidades por 15 días. Elige el plan ideal.</p>
+        <button class="btn-small-blue">¿Quiero mi prueba gratis!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Quién puede beneficiarse: 2 columnas offset gris -->
+<div class="section" style="background:#f9fafb">
+  <div class="container">
+    <h2 class="section-title">¿Quién puede beneficiarse de usar Siigo Fiscal?</h2>
+    <div class="benefit-two-col">
+      <div class="benefit-card"><i class="fas fa-users" style="font-size:2.5rem; color:var(--azul-base)"></i><h3>Despachos contables</h3><p>Gestiona múltiples RFCs, automatiza la conciliación fiscal de tus clientes y reduce tiempos de revisión con alertas personalizadas.</p></div>
+      <div class="benefit-card"><i class="fas fa-chart-line" style="font-size:2.5rem; color:var(--azul-base)"></i><h3>Empresas y Contadores</h3><p>Controla tus CFDI, evita multas y mantén al día el IVA e ISR con visores SAT sincronizados automáticamente.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- FUNCIONES QUE TRANSFORMAN (radios) -->
+<div class="section">
+  <div class="container">
+    <h2 class="section-title">Funciones que transforman tu control fiscal</h2>
+    <div class="feature-radio-group" id="featureRadios">
+      <div class="feature-radio active" data-feature="sync">Sincroniza tus CFDIs</div>
+      <div class="feature-radio" data-feature="iva">Conciliación del IVA e ISR</div>
+      <div class="feature-radio" data-feature="reportes">Reportes fiscales inteligentes</div>
+      <div class="feature-radio" data-feature="validacion">Validación automática de comprobantes fiscales</div>
+      <div class="feature-radio" data-feature="efos">Monitoreo de proveedores EFOS</div>
+      <div class="feature-radio" data-feature="materialidad">Materialidad de operaciones</div>
+      <div class="feature-radio" data-feature="alertas">Alertas y notificaciones automáticas</div>
+      <div class="feature-radio" data-feature="acompañamiento">⭐Acompañamiento especializado</div>
+    </div>
+
+    <div class="feature-detail-panel" id="featurePanel">
+      <div class="feature-img"><svg width="200" height="160" viewBox="0 0 200 160"><rect x="30" y="40" width="140" height="80" rx="12" fill="#EFF6FF"/><path d="M70 90 L100 70 L130 90" stroke="#009dfe" fill="none" stroke-width="2"/></svg></div>
+      <div class="feature-info" id="featureInfo"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRECIOS con tabs mensual/semestral/anual + 4 tarjetas -->
+<div class="section" style="background:#fefefe">
+  <div class="container">
+    <h2 class="section-title">¡Encuentra el plan perfecto de Siigo Fiscal!</h2>
+    <div class="pricing-tabs">
+      <button class="tab-btn active" data-period="monthly">Mensual</button>
+      <button class="tab-btn" data-period="semestral">Semestral</button>
+      <button class="tab-btn" data-period="annual">Anual</button>
+    </div>
+    <div class="pricing-grid" id="pricingGrid"></div>
+  </div>
+</div>
+
+<!-- PRUEBA GRATIS: fondo degradado verde a blanco -->
+<div class="container" style="margin-bottom: 40px;">
+  <div class="gradient-section">
+    <div class="gradient-inner">
+      <div class="gradient-img"><i class="fas fa-chalkboard-user" style="font-size: 5rem; color:#2c5a2e;"></i></div>
+      <div class="gradient-text">
+        <h2>¡Prueba Siigo Fiscal<br> completamente gratis!</h2>
+        <p>Inicia tu prueba gratuita de 15 días para evaluar todas las funcionalidades que Siigo Fiscal te ofrece.</p>
+        <button class="btn-azul" id="freeTrialBtn2">Iniciar prueba gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section">
+  <div class="container">
+    <h2 class="section-title">Preguntas frecuentes</h2>
+    <div id="faqContainer">
+      <div class="faq-item"><div class="faq-question">¿Cuáles son los beneficios de usar Siigo Fiscal? <i class="fas fa-plus"></i></div><div class="faq-answer">Automatización total, conciliación SAT, control de CFDI 4.0, alertas fiscales.</div></div>
+      <div class="faq-item"><div class="faq-question">¿Qué es y para qué sirve el sistema Siigo Fiscal? <i class="fas fa-plus"></i></div><div class="faq-answer">Software que sincroniza con el SAT, valida comprobantes fiscales y evita multas.</div></div>
+      <div class="faq-item"><div class="faq-question">¿Para qué sirve la asesoría gratuita de una hora? <i class="fas fa-plus"></i></div><div class="faq-answer">Configurar correctamente el sistema y resolver dudas con expertos.</div></div>
+      <div class="faq-item"><div class="faq-question">¿Cómo aseguro la correcta configuración? <i class="fas fa-plus"></i></div><div class="faq-answer">Con la asesoría inicial y sincronización automática con el SAT.</div></div>
+      <div class="faq-item"><div class="faq-question">¿Por qué es necesario llevar un control de los CFDI? <i class="fas fa-plus"></i></div><div class="faq-answer">Para evitar requerimientos SAT, sanciones y orden fiscal.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ACOMPAÑAMIENTO ESPECIALIZADO: degradado verde blanco -->
+<div class="container" style="margin-bottom: 60px;">
+  <div class="gradient-section">
+    <div class="gradient-inner">
+      <div class="gradient-img"><i class="fas fa-handshake" style="font-size: 5rem; color:#2c5a2e;"></i></div>
+      <div class="gradient-text">
+        <h2>Aprovecha el Acompañamiento<br> Especializado de Siigo Fiscal</h2>
+        <p>Integra los beneficios de Siigo Fiscal a tus procesos diarios con la asesoría exclusiva de 1 hora. ¡Elige el plan ideal para tus necesidades y disfruta de este beneficio!</p>
+        <button class="btn-green" style="margin-right: 15px;">Comprar ahora</button>
+        <button class="btn-azul">Contacta a un asesor</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Nosotros</h4><a>¿Quiénes somos?</a><a>Alianzas estratégicas</a><a>Certificaciones</a><a>Por qué Siigo</a></div>
+      <div class="footer-col"><h4>Soluciones</h4><a>Siigo Nube</a><a>Siigo Fiscal</a><a>COI</a><a>NOI SAE</a><a>Facture</a></div>
+      <div class="footer-col"><h4>Contenido</h4><a>Blog</a><a>Eventos</a><a>Testimonios</a><a>Webinars</a></div>
+      <div class="footer-col"><h4>Aplicaciones</h4><a>ADM</a><a>ADM Tienda</a><a>NOI Asistente</a></div>
+      <div class="footer-col"><h4>Enlaces rápidos</h4><a>Descargar reinstallables</a><a>Activa tu sistema</a><a>Manuales</a><a>Cancelar CFDI</a></div>
+      <div class="footer-col"><h4>Políticas</h4><a>Condiciones de uso</a><a>Aviso de privacidad</a><a>Contadores aliados</a></div>
+    </div>
+    <div class="copyright" style="text-align:center; margin-top:40px; font-size:0.7rem">Copyright© Todos los Derechos Reservados SICONT MEX S.A. DE CV México 2023</div>
+  </div>
+</footer>
+
+<script>
+  // ----- Radio features dynamic -----
+  const featureData = {
+    sync: { title: "Sincroniza tus CFDIs", items: ["Ahorra tiempo con la sincronización de tus CFDIS con el visor de XML del SAT.", "Descarga automáticamente todos tus CFDIs emitidos y recibidos todos los días, o descarga tu información cuando lo necesites.", "Consulta el histórico de tu información fiscal de hasta 5 años.", "Organiza los comprobantes por tipo, periodo o ejercicio fiscal para una gestión ágil de manera automática."] },
+    iva: { title: "Conciliación del IVA e ISR", items: ["Cálculo automático del IVA trasladado y acreditable.", "Conciliación directa con los visores del SAT.", "Detección de discrepancias en complementos de pago.", "Reportes detallados para declaraciones mensuales."] },
+    reportes: { title: "Reportes fiscales inteligentes", items: ["Genera reportes ejecutivos en Excel.", "Visualiza tendencias de impuestos.", "Exporta información para contabilidad.", "Dashboards personalizables."] },
+    validacion: { title: "Validación automática de comprobantes fiscales", items: ["Verifica que los CFDI cumplan guía 4.0.", "Detecta cancelaciones y errores estructurales.", "Alertas en tiempo real.", "Historial de validaciones."] },
+    efos: { title: "Monitoreo de proveedores EFOS", items: ["Consulta diaria de la lista de empresas simuladas.", "Identifica riesgos fiscales en tu cadena de suministro.", "Alertas preventivas.", "Reportes de estatus de proveedores."] },
+    materialidad: { title: "Materialidad de operaciones", items: ["Análisis de montos para evitar cartas invitación.", "Detección de operaciones relevantes.", "Recomendaciones para mitigar riesgos.", "Seguimiento de materialidad fiscal."] },
+    alertas: { title: "Alertas y notificaciones automáticas", items: ["Recibe notificaciones de CFDI por vencer.", "Alertas de pagos pendientes.", "Notificaciones de cambios en el SAT.", "Configuración de alarmas personalizadas."] },
+    acompañamiento: { title: "Acompañamiento especializado", items: ["Asesoría fiscal personalizada 1 hora.", "Sesiones de onboarding y configuración.", "Soporte prioritario.", "Revisión de procesos contables."] }
+  };
+  function updateFeaturePanel(featureId) {
+    const data = featureData[featureId];
+    if(!data) return;
+    const html = `<h4>${data.title}</h4><ul>${data.items.map(i => `<li><i class="fas fa-check"></i> ${i}</li>`).join('')}</ul>`;
+    document.getElementById('featureInfo').innerHTML = html;
+  }
+  document.querySelectorAll('.feature-radio').forEach(radio => {
+    radio.addEventListener('click', () => {
+      document.querySelectorAll('.feature-radio').forEach(r => r.classList.remove('active'));
+      radio.classList.add('active');
+      updateFeaturePanel(radio.dataset.feature);
+    });
+  });
+  updateFeaturePanel('sync');
+
+  // ----- PRECIOS Dinámicos (mensual, semestral, anual) -----
+  const plansData = {
+    monthly: {
+      pyme: { old: 308.25, current: 277.43, yearPrice: 3329.10 },
+      empresarial: { old: 424.92, current: 382.43, yearPrice: 4589.10 },
+      corporativo: { old: 741.58, current: 667.43, yearPrice: 8009.10 },
+      despachos: { old: 1124.92, current: 1012.43, yearPrice: 12149.10 }
+    },
+    semestral: { // 5% descuento extra simulado sobre mensual*6
+      pyme: { old: 308.25*6, current: 277.43*6*0.95, yearPrice: 3329.10*0.95 },
+      empresarial: { old: 424.92*6, current: 382.43*6*0.95, yearPrice: 4589.10*0.95 },
+      corporativo: { old: 741.58*6, current: 667.43*6*0.95, yearPrice: 8009.10*0.95 },
+      despachos: { old: 1124.92*6, current: 1012.43*6*0.95, yearPrice: 12149.10*0.95 }
+    },
+    annual: {
+      pyme: { old: 3329.10, current: 277.43*12*0.9, yearPrice: 277.43*12*0.9 },
+      empresarial: { old: 4589.10, current: 382.43*12*0.9, yearPrice: 382.43*12*0.9 },
+      corporativo: { old: 8009.10, current: 667.43*12*0.9, yearPrice: 667.43*12*0.9 },
+      despachos: { old: 12149.10, current: 1012.43*12*0.9, yearPrice: 1012.43*12*0.9 }
+    }
+  };
+  function formatMoney(val) { return Math.round(val).toLocaleString('es-MX'); }
+  function renderPrices(period) {
+    const data = plansData[period];
+    const plansKeys = ['pyme','empresarial','corporativo','despachos'];
+    const titles = ['Siigo Fiscal PYME','Siigo Fiscal Empresarial','Siigo Fiscal Corporativo','Siigo Fiscal Despachos'];
+    const badges = ['Nuevo producto','Nuevo producto','Recomendado','Nuevo producto'];
+    const rfcLimit = ['1 RFC','3 RFCs','10 RFCs','RFCs ilimitados'];
+    const users = ['1 usuario','1 usuario','3 usuarios','5 usuarios'];
+    let html = '';
+    for(let i=0;i<plansKeys.length;i++){
+      const key = plansKeys[i];
+      const price = data[key];
+      html += `<div class="price-card"><div class="new-badge">${badges[i]}</div><h3>${titles[i]}</h3><div><span class="old-price">Antes $${formatMoney(price.old)} / mes</span><span class="discount-badge">-10%</span></div><div class="current-price">$${formatMoney(price.current)} <span style="font-size:1rem;">/ mes</span></div><div class="year-price">$${formatMoney(price.yearPrice)} / año</div><div class="year-price">Precios sin IVA</div><ul class="price-feature-list"><li><i class="fas fa-check-circle"></i> ${rfcLimit[i]}</li><li><i class="fas fa-check-circle"></i> ${users[i]}</li><li><i class="fas fa-check-circle"></i> Portal Contador</li><li><i class="fas fa-check-circle"></i> Sincronización diaria SAT</li><li><i class="fas fa-check-circle"></i> Exportación a Excel</li><li><i class="fas fa-check-circle"></i> Conciliación visores SAT</li><li><i class="fas fa-check-circle"></i> Identificación CFDIs cancelados</li><li><i class="fas fa-check-circle"></i> Consulta EFOS</li><li><i class="fas fa-check-circle"></i> Cálculo de IVA</li><li><i class="fas fa-check-circle"></i> Pagos pendientes</li><li><i class="fas fa-check-circle"></i> Sincronización COI</li></ul><button class="btn-comprar">Comprar ahora</button><button class="btn-asesor-outline">Contacta a un asesor</button></div>`;
+    }
+    document.getElementById('pricingGrid').innerHTML = html;
+  }
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderPrices(btn.dataset.period);
+    });
+  });
+  renderPrices('monthly');
+
+  // Mobile menu + alerts
+  document.getElementById('mobileMenuToggle')?.addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('show');});
+  document.querySelectorAll('.faq-question').forEach(q => { q.addEventListener('click',()=>{ q.parentElement.classList.toggle('active'); }); });
+  document.querySelectorAll('.btn-green, .btn-comprar, .btn-azul, #heroCta, #freeTrialBtn2').forEach(btn => { btn.addEventListener('click',()=>alert('🚀 ¡Gracias! Un asesor Siigo Fiscal te contactará.')); });
+</script>
+</body>
+</html>
