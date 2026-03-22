@@ -47,7 +47,7 @@
       --gris-azulado: #37465b;
     }
 
-    /* Top bar con selects hover desplegable */
+    /* Top bar con selects hover desplegable - MEJORADO */
     .top-bar {
       background-color: #009dfe;
       padding: 10px 0;
@@ -62,17 +62,18 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .top-select-wrapper {
       position: relative;
       display: inline-block;
-      margin-left: 12px;
     }
 
     .top-select-trigger {
-      background: rgba(255, 255, 255, 0.2);
-      border: none;
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       color: white;
       padding: 6px 12px;
       border-radius: 10px;
@@ -81,10 +82,12 @@
       cursor: pointer;
       font-family: 'Nunito', sans-serif;
       transition: all 0.2s;
+      white-space: nowrap;
     }
 
     .top-select-trigger:hover {
-      background: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.4);
+      border-color: rgba(255, 255, 255, 0.5);
     }
 
     .top-select-dropdown {
@@ -92,17 +95,22 @@
       top: 100%;
       right: 0;
       background: white;
+      color: #000;
       border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
       min-width: 180px;
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
       z-index: 1001;
       margin-top: 5px;
       overflow: hidden;
     }
 
-    .top-select-wrapper:hover .top-select-dropdown {
-      display: block;
+    .top-select-wrapper:hover .top-select-dropdown,
+    .top-select-dropdown:hover {
+      opacity: 1;
+      visibility: visible;
     }
 
     .top-select-dropdown a {
@@ -112,6 +120,7 @@
       text-decoration: none;
       font-size: 0.8rem;
       transition: background 0.2s;
+      cursor: pointer;
     }
 
     .top-select-dropdown a:hover {
@@ -403,10 +412,46 @@
       color: #cbd5e1;
     }
 
-    /* Pricing Carousel */
+    /* Pricing Carousel - MEJORADO con márgenes */
+    .pricing-section {
+      padding: 70px 0;
+    }
+
+    .period-indicator {
+      text-align: center;
+      margin: 0 0 24px 0;
+      font-size: 0.9rem;
+      color: var(--azul-base);
+      font-weight: 600;
+    }
+
+    .pricing-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .tab-btn {
+      padding: 10px 32px;
+      border-radius: 10px;
+      font-weight: 800;
+      background: #f1f5f9;
+      cursor: pointer;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--azul-base);
+      color: white;
+    }
+
     .pricing-carousel-container {
       position: relative;
       padding: 0 50px;
+      margin-top: 20px;
     }
 
     .carousel-btn {
@@ -447,6 +492,7 @@
       display: flex;
       transition: transform 0.5s ease;
       gap: 32px;
+      padding: 10px 0;
     }
 
     .price-card {
@@ -502,6 +548,15 @@
 
       .pricing-carousel-container {
         padding: 0 40px;
+      }
+
+      .pricing-tabs {
+        margin-bottom: 30px;
+      }
+
+      .tab-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
       }
     }
 
@@ -614,37 +669,6 @@
       align-items: center;
       gap: 24px;
       flex-wrap: wrap;
-    }
-
-    .period-indicator {
-      text-align: center;
-      margin: 20px 0 20px;
-      font-size: 0.9rem;
-      color: var(--azul-base);
-      font-weight: 600;
-    }
-
-    .pricing-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-
-    .tab-btn {
-      padding: 10px 32px;
-      border-radius: 10px;
-      font-weight: 800;
-      background: #f1f5f9;
-      cursor: pointer;
-      border: none;
-      font-family: 'Nunito', sans-serif;
-      transition: all 0.2s;
-    }
-
-    .tab-btn.active {
-      background: var(--azul-base);
-      color: white;
     }
 
     /* Sección fondo imagen */
@@ -845,7 +869,7 @@
       }
     }
 
-    /* Footer */
+    /* Footer con nubes animadas - NUEVA ANIMACIÓN */
     footer {
       background: var(--azul-base);
       color: #cbd5e1;
@@ -863,6 +887,19 @@
       height: auto;
       pointer-events: none;
       z-index: 1;
+      animation: cloudMove 8s ease-in-out infinite;
+    }
+
+    @keyframes cloudMove {
+      0% {
+        transform: translateX(-20px) translateY(0);
+      }
+      50% {
+        transform: translateX(20px) translateY(-10px);
+      }
+      100% {
+        transform: translateX(-20px) translateY(0);
+      }
     }
 
     .footer-grid {
@@ -933,7 +970,12 @@
       }
 
       .top-select-wrapper {
-        margin: 5px;
+        margin: 0;
+      }
+
+      .top-select-trigger {
+        font-size: 0.7rem;
+        padding: 4px 10px;
       }
     }
 
@@ -967,29 +1009,44 @@
 
 <body>
 
-  <!-- TOP BAR con selects hover desplegable -->
+  <!-- TOP BAR con selects hover desplegable - MEJORADO -->
   <div class="top-bar">
     <div class="container-custom">
-      <div>
-        <div class="top-select-wrapper">
-          <div class="top-select-trigger">🇲🇽 México ▼</div>
-          <div class="top-select-dropdown"><a>🇲🇽 México</a><a>🇨🇴 Colombia</a><a>🇨🇱 Chile</a><a>🇪🇨
-              Ecuador</a><a>🇵🇪 Perú</a><a>🇺🇾 Uruguay</a></div>
+      <div class="top-select-wrapper">
+        <div class="top-select-trigger">🇲🇽 México ▼</div>
+        <div class="top-select-dropdown">
+          <a>🇲🇽 México</a>
+          <a>🇨🇴 Colombia</a>
+          <a>🇨🇱 Chile</a>
+          <a>🇪🇨 Ecuador</a>
+          <a>🇵🇪 Perú</a>
+          <a>🇺🇾 Uruguay</a>
         </div>
-        <div class="top-select-wrapper">
-          <div class="top-select-trigger">Soporte ▼</div>
-          <div class="top-select-dropdown"><a>Soporte técnico</a><a>Centro de ayuda</a><a>Chat en
-              línea</a><a>WhatsApp</a></div>
+      </div>
+      <div class="top-select-wrapper">
+        <div class="top-select-trigger">Soporte ▼</div>
+        <div class="top-select-dropdown">
+          <a>Soporte técnico</a>
+          <a>Centro de ayuda</a>
+          <a>Chat en línea</a>
+          <a>WhatsApp</a>
         </div>
-        <div class="top-select-wrapper">
-          <div class="top-select-trigger">Distribuidor ▼</div>
-          <div class="top-select-dropdown"><a>Distribuidor autorizado</a><a>Buscador de distribuidores</a><a>Conviértete
-              en distribuidor</a></div>
+      </div>
+      <div class="top-select-wrapper">
+        <div class="top-select-trigger">Distribuidor ▼</div>
+        <div class="top-select-dropdown">
+          <a>Distribuidor autorizado</a>
+          <a>Buscador de distribuidores</a>
+          <a>Conviértete en distribuidor</a>
         </div>
-        <div class="top-select-wrapper">
-          <div class="top-select-trigger">Contacta ventas: 55 2907 9997 ▼</div>
-          <div class="top-select-dropdown"><a>📞 Llamada: 55 2907 9997</a><a>📧 ventas@siigo.com</a><a>⏰ Horario: L-V
-              9:00 a 18:00</a><a>💬 WhatsApp: 55 1234 5678</a></div>
+      </div>
+      <div class="top-select-wrapper">
+        <div class="top-select-trigger">Contacta ventas: 55 2907 9997 ▼</div>
+        <div class="top-select-dropdown">
+          <a>📞 Llamada: 55 2907 9997</a>
+          <a>📧 ventas@siigo.com</a>
+          <a>⏰ Horario: L-V 9:00 a 18:00</a>
+          <a>💬 WhatsApp: 55 1234 5678</a>
         </div>
       </div>
     </div>
@@ -1280,7 +1337,7 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER con nubes animadas -->
   <footer>
     <img src="assets/nubes-footer.png" alt="Nubes" class="footer-nubes" onerror="this.style.display='none'">
     <div class="container-custom">
@@ -1317,6 +1374,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     /**
      * ============================================
@@ -1341,7 +1399,6 @@
 
     // Base de datos de funciones con sus títulos y descripciones completas
     const featureData = {
-      // Función: Sincronización de CFDIs
       sync: {
         title: "Sincroniza tus CFDIs",
         items: [
@@ -1351,7 +1408,6 @@
           "Organiza los comprobantes por tipo, periodo o ejercicio fiscal para una gestión ágil de manera automática."
         ]
       },
-      // Función: Conciliación del IVA e ISR
       iva: {
         title: "Conciliación del IVA e ISR",
         items: [
@@ -1360,7 +1416,6 @@
           "Carga fácilmente todas tus compras y gastos deducibles en el prellenado del IVA e ISR."
         ]
       },
-      // Función: Reportes fiscales inteligentes
       reportes: {
         title: "Reportes fiscales inteligentes",
         items: [
@@ -1369,7 +1424,6 @@
           "Obtén análisis estadísticos confiables y exporta en Excel, XML o PDF para facilitar la toma de decisiones."
         ]
       },
-      // Función: Validación automática de comprobantes fiscales
       validacion: {
         title: "Validación automática de comprobantes fiscales",
         items: [
@@ -1379,7 +1433,6 @@
           "Mantén tu información en orden en caso de que el SAT la solicite."
         ]
       },
-      // Función: Monitoreo de proveedores EFOS
       efos: {
         title: "Monitoreo de proveedores EFOS",
         items: [
@@ -1388,7 +1441,6 @@
           "Monitoreo diario de la lista negra del SAT para prevenir riesgos en tus operaciones."
         ]
       },
-      // Función: Materialidad de operaciones
       materialidad: {
         title: "Materialidad de operaciones",
         items: [
@@ -1396,7 +1448,6 @@
           "Anticípate al procedimiento 49 Bis del CFF con la correcta organización y documentación de tus operaciones."
         ]
       },
-      // Función: Alertas y notificaciones automáticas
       alertas: {
         title: "Alertas y notificaciones automáticas",
         items: [
@@ -1404,7 +1455,6 @@
           "Mantente informado dentro de la plataforma o por correo electrónico para actuar rápidamente."
         ]
       },
-      // Función: Acompañamiento especializado
       acompañamiento: {
         title: "Acompañamiento especializado",
         items: [
@@ -1415,13 +1465,6 @@
       }
     };
 
-    /**
-     * Función: Actualiza el panel de información según la función seleccionada
-     * @param {string} featureId - Identificador de la función (sync, iva, etc.)
-     * 
-     * Estrategia: Renderiza dinámicamente el HTML con título y lista de características,
-     * utilizando iconos de check animados para mejor experiencia visual
-     */
     function updateFeaturePanel(featureId) {
       const data = featureData[featureId];
       if (data) {
@@ -1434,46 +1477,34 @@
       }
     }
 
-    // Configurar eventos de los botones de funciones (feature radios)
-    // Al hacer clic, cambia la clase 'active' y actualiza el contenido
     document.querySelectorAll('.feature-radio').forEach(radio => {
       radio.addEventListener('click', () => {
-        // Remover clase active de todos los radios
         document.querySelectorAll('.feature-radio').forEach(r => r.classList.remove('active'));
-        // Agregar clase active al radio seleccionado
         radio.classList.add('active');
-        // Actualizar panel con la función seleccionada
         updateFeaturePanel(radio.dataset.feature);
       });
     });
-    // Inicializar con la primera función activa
     updateFeaturePanel('sync');
 
     /**
      * ============================================
      * SECCIÓN 2: CAROUSEL DE PRECIOS Y CAMBIO DE PERIODICIDAD
      * ============================================
-     * Maneja la visualización de tarjetas de precios con carousel infinito
-     * y permite cambiar entre periodicidad mensual, semestral y anual
      */
 
-    // Base de datos de precios para cada periodicidad
     const plansData = {
-      // Precios mensuales - Sin descuento
       monthly: {
         pyme: { current: 354.00 },
         empresarial: { current: 489.00 },
         corporativo: { current: 853.00 },
         despachos: { current: 1294.00 }
       },
-      // Precios semestrales - Con 10% de descuento
       semestral: {
         pyme: { old: 308.33, current: 277.50, yearPrice: 1665.00 },
         empresarial: { old: 425.00, current: 382.50, yearPrice: 2295.00 },
         corporativo: { old: 741.67, current: 667.50, yearPrice: 4005.00 },
         despachos: { old: 1125.00, current: 1012.50, yearPrice: 6075.00 }
       },
-      // Precios anuales - Con 10% de descuento adicional
       annual: {
         pyme: { old: 308.25, current: 277.43, yearPrice: 3329.10 },
         empresarial: { old: 424.92, current: 382.43, yearPrice: 4589.10 },
@@ -1482,28 +1513,14 @@
       }
     };
 
-    /**
-     * Formatea números a moneda mexicana (MXN)
-     * @param {number} val - Valor a formatear
-     * @returns {string} Valor formateado con separadores de miles
-     */
     function formatMoney(val) {
       return Math.round(val).toLocaleString('es-MX');
     }
 
-    // Variables de estado del carousel
-    let currentPeriod = 'monthly';  // Periodicidad actual: monthly, semestral, annual
-    let currentIndex = 0;           // Índice actual del carousel
-    let cardsData = [];             // Almacena las tarjetas generadas
+    let currentPeriod = 'monthly';
+    let currentIndex = 0;
+    let cardsData = [];
 
-    /**
-     * Genera el HTML de las tarjetas de precios según la periodicidad seleccionada
-     * @param {string} period - Periodicidad (monthly, semestral, annual)
-     * @returns {Array} Array con el HTML de cada tarjeta
-     * 
-     * Estrategia: Cada tarjeta incluye badge, título, precios con descuento si aplica,
-     * lista de características, botón de compra y botón de contacto
-     */
     function generateCards(period) {
       const data = plansData[period];
       const keys = ['pyme', 'empresarial', 'corporativo', 'despachos'];
@@ -1511,7 +1528,7 @@
       const badges = ['Nuevo producto', 'Nuevo producto', 'Recomendado', 'Nuevo producto'];
       const rfcLimit = ['1 RFC', '3 RFCs', '10 RFCs', 'RFCs ilimitados'];
       const users = ['1 usuario', '1 usuario', '3 usuarios', '5 usuarios'];
-      const hasDiscount = period !== 'monthly'; // Solo mensual no tiene descuento mostrado
+      const hasDiscount = period !== 'monthly';
 
       return keys.map((key, i) => {
         const p = data[key];
@@ -1549,37 +1566,19 @@
       });
     }
 
-    /**
-     * Actualiza el carousel completo
-     * - Regenera las tarjetas según la periodicidad actual
-     * - Aplica la transformación de desplazamiento según el índice
-     * - Actualiza los dots de navegación
-     * 
-     * Estrategia: Responsive - detecta el ancho de pantalla para definir
-     * cuántas tarjetas mostrar por vista (1 en móvil, 2 en tablet, 4 en desktop)
-     */
     function updateCarousel() {
       cardsData = generateCards(currentPeriod);
       const track = document.getElementById('pricingTrack');
       track.innerHTML = cardsData.join('');
-
-      // Definir items por vista según el tamaño de pantalla
       const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
-      // Aplicar transformación para desplazar el carousel
       track.style.transform = `translateX(-${currentIndex * (100 / itemsPerView)}%)`;
       updateDots();
     }
 
-    /**
-     * Actualiza los indicadores (dots) del carousel
-     * - Calcula el número total de páginas según items por vista
-     * - Genera dots clickeables para navegación directa
-     */
     function updateDots() {
       const dotsContainer = document.getElementById('carouselDots');
       const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
       const total = Math.ceil(cardsData.length / itemsPerView);
-
       dotsContainer.innerHTML = '';
       for (let i = 0; i < total; i++) {
         const dot = document.createElement('div');
@@ -1592,44 +1591,37 @@
       }
     }
 
-    // Configurar botones de navegación del carousel
     document.getElementById('prevBtn').addEventListener('click', () => {
       const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
       const total = Math.ceil(cardsData.length / itemsPerView);
-      currentIndex = (currentIndex - 1 + total) % total; // Navegación circular (infinito)
+      currentIndex = (currentIndex - 1 + total) % total;
       updateCarousel();
     });
 
     document.getElementById('nextBtn').addEventListener('click', () => {
       const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
       const total = Math.ceil(cardsData.length / itemsPerView);
-      currentIndex = (currentIndex + 1) % total; // Navegación circular (infinito)
+      currentIndex = (currentIndex + 1) % total;
       updateCarousel();
     });
 
-    // Configurar botones de periodicidad (Mensual, Semestral, Anual)
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        // Actualizar estilo activo de los tabs
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        // Cambiar periodicidad y resetear índice
         currentPeriod = btn.dataset.period;
         currentIndex = 0;
         updateCarousel();
       });
     });
 
-    // Inicializar carousel
     updateCarousel();
-    // Recalcular carousel al cambiar tamaño de ventana (responsive)
     window.addEventListener('resize', () => updateCarousel());
 
     /**
      * ============================================
      * SECCIÓN 3: MENÚ MÓVIL RESPONSIVE
      * ============================================
-     * Maneja la apertura/cierre del menú de navegación en dispositivos móviles
      */
     document.getElementById('mobileMenuToggle')?.addEventListener('click', () => {
       document.getElementById('navLinks').classList.toggle('show');
@@ -1639,7 +1631,6 @@
      * ============================================
      * SECCIÓN 4: ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
      * ============================================
-     * Permite expandir/contraer las respuestas al hacer clic en las preguntas
      */
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
@@ -1651,19 +1642,12 @@
      * ============================================
      * SECCIÓN 5: ALERTAS DE BOTONES DE ACCIÓN
      * ============================================
-     * Simula la interacción con el usuario mostrando un mensaje de agradecimiento
-     * y confirmación de contacto por parte de un asesor
-     * 
-     * Estrategia: Captura todos los botones de acción principales (comprar, probar gratis,
-     * contactar, etc.) y muestra una alerta simulando que un asesor contactará al usuario
      */
     document.querySelectorAll('.btn-green, .btn-comprar, .btn-azul, .btn-login, #probarGratis, #comprarAhoraHero, #footerTrialBtn, #freeTrialBtn2')
       .forEach(btn => {
         btn.addEventListener('click', () => alert('🚀 ¡Gracias! Un asesor Siigo Fiscal te contactará.'));
       });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
