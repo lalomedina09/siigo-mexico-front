@@ -1099,8 +1099,9 @@
       <div class="row">
         <div class="col-lg-6 hero-content">
           <div class="hero-badge"><i class="fas fa-star"></i> Nuevo producto</div>
-          <h1>Siigo Fiscal: Sincronización automática con visores del SAT México y descarga masiva de CFDIs</h1>
-          <p>Automatiza tu proceso de conciliación fiscal, ¡sincroniza tu información con los visores del SAT (Secretaría de Administración Tributaria)! Elige tu plan ideal y obtén acompañamiento experto especializado para reducir riesgos fiscales.</p>
+          <h1>Siigo Fiscal: Sincronización automática con visores del SAT y descarga masiva de CFDIs</h1>
+          <p>Automatiza tu proceso de conciliación fiscal, ¡sincroniza tu información con los visores del SAT             
+            ! Elige tu plan ideal y obtén acompañamiento experto especializado para reducir riesgos fiscales.</p>
           <div class="hero-buttons">
             <button class="btn-green" id="probarGratis">Probar sin costo <i class="fas fa-arrow-right"></i></button>
             <button class="btn-azul" id="comprarAhoraHero">Comprar ahora</button>
@@ -1317,15 +1318,15 @@
 <footer>
   <img src="assets/nubes-footer.png" alt="Nubes" class="footer-nubes" onerror="this.style.display='none'">
   <div class="container-custom">
-    <!-- Sección logo + texto distribuidor autorizado en同一行 -->
+    <!-- Sección logo + texto distribuidor  -->
     <div class="footer-header">
       <div class="footer-logo">
         <img src="assets/sello-web-positivo1.png" alt="Siigo Fiscal" onerror="this.src='https://placehold.co/180x60/009dfe/white?text=Siigo+Fiscal'">
       </div>
       <div class="distribuidor-info">
-        <img src="sello-web-positivo1.png" alt="Distribuidor Autorizado" class="distribuidor-sello">
+        <img src="assets/inelco-logo-positivo.webp" alt="Distribuidor Autorizado" class="distribuidor-sello">
         <div class="distribuidor-texto">
-          <strong>Distribuidor Autorizado Siigo Fiscal</strong><br>
+          <strong>INELCO Distribuidor Autorizado Siigo Fiscal</strong><br>
           <span>Somos distribuidores oficiales certificados por Siigo Aspel. Garantizamos soporte especializado, asesoría personalizada y los mejores precios en soluciones fiscales y contables para México.</span>
         </div>
       </div>
@@ -1390,13 +1391,13 @@
         <h4><i class="fas fa-headset"></i> Atención al cliente</h4>
         <a><i class="fab fa-whatsapp"></i> WhatsApp: 55 2907 9997</a>
         <a><i class="fas fa-clock"></i> Horario: L-V 9:00 a 18:00</a>
-        <a><i class="fas fa-envelope"></i> soporte@siigofiscalmx.com</a>
+        <a><i class="fas fa-envelope"></i> contacto@siigofiscalmx.com</a>
         <a><i class="fas fa-chalkboard-user"></i> Asesoría especializada</a>
       </div>
     </div>
 
     <div class="copyright">
-      <p>Copyright© Todos los Derechos Reservados SICONT MEX S.A. DE CV México 2023</p>
+      <p></p>
     </div>
   </div>
 </footer>
@@ -1675,150 +1676,150 @@
 </style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    /**
-     * ============================================
-     * SIIGO FISCAL - SCRIPT PRINCIPAL
-     * ============================================
-     */
+<script>
+  /**
+   * ============================================
+   * SIIGO FISCAL - SCRIPT PRINCIPAL
+   * ============================================
+   */
 
-    // Funciones interactivas
-    const featureData = {
-      sync: {
-        title: "Sincroniza tus CFDIs",
-        items: [
-          "Ahorra tiempo con la sincronización de tus CFDIS con el visor de XML del SAT México.",
-          "Descarga automáticamente todos tus CFDIs emitidos y recibidos todos los días, o descarga tu información cuando lo necesites.",
-          "Consulta el histórico de tu información fiscal de hasta 5 años.",
-          "Organiza los comprobantes por tipo, periodo o ejercicio fiscal para una gestión ágil de manera automática."
-        ]
-      },
-      iva: {
-        title: "Conciliación del IVA e ISR",
-        items: [
-          "Calcula correctamente el IVA e ISR que debes pagar, considerando CFDIs y complementos de pago relacionados a facturas de crédito.",
-          "Identifica los CFDIS incluidos y excluidos en el cálculo del IVA trasladado y acreditable, y permite moverlos para ser considerados o no en el cálculo del impuesto.",
-          "Carga fácilmente todas tus compras y gastos deducibles en el prellenado del IVA e ISR."
-        ]
-      },
-      reportes: {
-        title: "Reportes fiscales inteligentes",
-        items: [
-          "Detecta automáticamente cuales CFDIs incluyó el SAT en el cálculo del IVA acreditable.",
-          "Genera hojas de trabajo, validaciones, reportes de cancelados e impuestos para simplificar la conciliación.",
-          "Obtén análisis estadísticos confiables y exporta en Excel, XML o PDF para facilitar la toma de decisiones."
-        ]
-      },
-      validacion: {
-        title: "Validación automática de comprobantes fiscales",
-        items: [
-          "Revisa de forma inmediata que tus CFDIs cumplan con los requisitos fiscales de la guía 4.0.",
-          "Detecta errores en la emisión de comprobantes y evita multas en tus declaraciones.",
-          "Recibe alertas por correo electrónico en caso de inconsistencias o cancelaciones posteriores al cierre.",
-          "Mantén tu información en orden en caso de que el SAT la solicite."
-        ]
-      },
-      efos: {
-        title: "Monitoreo de proveedores EFOS",
-        items: [
-          "Recibe una notificación si realizaste operaciones con algún EFOS en tus últimos ejercicios.",
-          "Identifica si alguno de tus proveedores está listado como EFOS por la autoridad.",
-          "Monitoreo diario de la lista negra del SAT para prevenir riesgos en tus operaciones."
-        ]
-      },
-      materialidad: {
-        title: "Materialidad de operaciones",
-        items: [
-          "Asocia archivos complementarios a tus CFDIs para comprobar la materialidad de tus operaciones de gastos y compras.",
-          "Anticípate al procedimiento 49 Bis del CFF con la correcta organización y documentación de tus operaciones."
-        ]
-      },
-      alertas: {
-        title: "Alertas y notificaciones automáticas",
-        items: [
-          "Recibe avisos inmediatos sobre errores, cancelaciones o riesgos detectados en tus CFDIs.",
-          "Mantente informado dentro de la plataforma o por correo electrónico para actuar rápidamente."
-        ]
-      },
-      acompañamiento: {
-        title: "Acompañamiento especializado",
-        items: [
-          "Aprende a usar tu plataforma de Siigo Fiscal con acompañamiento especializado.",
-          "Resuelve dudas y mejora tu uso de la herramienta en una sesión guiada gratuita de una hora.",
-          "Elige entre el Acompañamiento para analizar diferencias entre visor SAT y Siigo Fiscal o el Acompañamiento ante Carta Invitación (uso de Siigo Fiscal)."
-        ]
-      }
-    };
+  // Funciones interactivas
+  const featureData = {
+    sync: {
+      title: "Sincroniza tus CFDIs",
+      items: [
+        "Ahorra tiempo con la sincronización de tus CFDIS con el visor de XML del SAT México.",
+        "Descarga automáticamente todos tus CFDIs emitidos y recibidos todos los días, o descarga tu información cuando lo necesites.",
+        "Consulta el histórico de tu información fiscal de hasta 5 años.",
+        "Organiza los comprobantes por tipo, periodo o ejercicio fiscal para una gestión ágil de manera automática."
+      ]
+    },
+    iva: {
+      title: "Conciliación del IVA e ISR",
+      items: [
+        "Calcula correctamente el IVA e ISR que debes pagar, considerando CFDIs y complementos de pago relacionados a facturas de crédito.",
+        "Identifica los CFDIS incluidos y excluidos en el cálculo del IVA trasladado y acreditable, y permite moverlos para ser considerados o no en el cálculo del impuesto.",
+        "Carga fácilmente todas tus compras y gastos deducibles en el prellenado del IVA e ISR."
+      ]
+    },
+    reportes: {
+      title: "Reportes fiscales inteligentes",
+      items: [
+        "Detecta automáticamente cuales CFDIs incluyó el SAT en el cálculo del IVA acreditable.",
+        "Genera hojas de trabajo, validaciones, reportes de cancelados e impuestos para simplificar la conciliación.",
+        "Obtén análisis estadísticos confiables y exporta en Excel, XML o PDF para facilitar la toma de decisiones."
+      ]
+    },
+    validacion: {
+      title: "Validación automática de comprobantes fiscales",
+      items: [
+        "Revisa de forma inmediata que tus CFDIs cumplan con los requisitos fiscales de la guía 4.0.",
+        "Detecta errores en la emisión de comprobantes y evita multas en tus declaraciones.",
+        "Recibe alertas por correo electrónico en caso de inconsistencias o cancelaciones posteriores al cierre.",
+        "Mantén tu información en orden en caso de que el SAT la solicite."
+      ]
+    },
+    efos: {
+      title: "Monitoreo de proveedores EFOS",
+      items: [
+        "Recibe una notificación si realizaste operaciones con algún EFOS en tus últimos ejercicios.",
+        "Identifica si alguno de tus proveedores está listado como EFOS por la autoridad.",
+        "Monitoreo diario de la lista negra del SAT para prevenir riesgos en tus operaciones."
+      ]
+    },
+    materialidad: {
+      title: "Materialidad de operaciones",
+      items: [
+        "Asocia archivos complementarios a tus CFDIs para comprobar la materialidad de tus operaciones de gastos y compras.",
+        "Anticípate al procedimiento 49 Bis del CFF con la correcta organización y documentación de tus operaciones."
+      ]
+    },
+    alertas: {
+      title: "Alertas y notificaciones automáticas",
+      items: [
+        "Recibe avisos inmediatos sobre errores, cancelaciones o riesgos detectados en tus CFDIs.",
+        "Mantente informado dentro de la plataforma o por correo electrónico para actuar rápidamente."
+      ]
+    },
+    acompañamiento: {
+      title: "Acompañamiento especializado",
+      items: [
+        "Aprende a usar tu plataforma de Siigo Fiscal con acompañamiento especializado.",
+        "Resuelve dudas y mejora tu uso de la herramienta en una sesión guiada gratuita de una hora.",
+        "Elige entre el Acompañamiento para analizar diferencias entre visor SAT y Siigo Fiscal o el Acompañamiento ante Carta Invitación (uso de Siigo Fiscal)."
+      ]
+    }
+  };
 
-    function updateFeaturePanel(featureId) {
-      const data = featureData[featureId];
-      if (data) {
-        document.getElementById('featureInfo').innerHTML = `
+  function updateFeaturePanel(featureId) {
+    const data = featureData[featureId];
+    if (data) {
+      document.getElementById('featureInfo').innerHTML = `
       <h4 style="font-size:1.8rem; font-weight:800; margin-bottom:24px;">${data.title}</h4>
       <ul>
         ${data.items.map(i => `<li><i class="fas fa-check"></i><span>${i}</span></li>`).join('')}
       </ul>
     `;
-      }
     }
+  }
 
-    document.querySelectorAll('.feature-radio').forEach(radio => {
-      radio.addEventListener('click', () => {
-        document.querySelectorAll('.feature-radio').forEach(r => r.classList.remove('active'));
-        radio.classList.add('active');
-        updateFeaturePanel(radio.dataset.feature);
-      });
+  document.querySelectorAll('.feature-radio').forEach(radio => {
+    radio.addEventListener('click', () => {
+      document.querySelectorAll('.feature-radio').forEach(r => r.classList.remove('active'));
+      radio.classList.add('active');
+      updateFeaturePanel(radio.dataset.feature);
     });
-    updateFeaturePanel('sync');
+  });
+  updateFeaturePanel('sync');
 
-    // Carousel de precios y WhatsApp
-    const plansData = {
-      monthly: {
-        pyme: { current: 354.00 },
-        empresarial: { current: 489.00 },
-        corporativo: { current: 853.00 },
-        despachos: { current: 1294.00 }
-      },
-      semestral: {
-        pyme: { old: 308.33, current: 277.50, yearPrice: 1665.00 },
-        empresarial: { old: 425.00, current: 382.50, yearPrice: 2295.00 },
-        corporativo: { old: 741.67, current: 667.50, yearPrice: 4005.00 },
-        despachos: { old: 1125.00, current: 1012.50, yearPrice: 6075.00 }
-      },
-      annual: {
-        pyme: { old: 308.25, current: 277.43, yearPrice: 3329.10 },
-        empresarial: { old: 424.92, current: 382.43, yearPrice: 4589.10 },
-        corporativo: { old: 741.58, current: 667.43, yearPrice: 8009.10 },
-        despachos: { old: 1124.92, current: 1012.43, yearPrice: 12149.10 }
-      }
-    };
-
-    function formatMoney(val) {
-      return Math.round(val).toLocaleString('es-MX');
+  // Carousel de precios y WhatsApp
+  const plansData = {
+    monthly: {
+      pyme: { current: 354.00 },
+      empresarial: { current: 489.00 },
+      corporativo: { current: 853.00 },
+      despachos: { current: 1294.00 }
+    },
+    semestral: {
+      pyme: { old: 308.33, current: 277.50, yearPrice: 1665.00 },
+      empresarial: { old: 425.00, current: 382.50, yearPrice: 2295.00 },
+      corporativo: { old: 741.67, current: 667.50, yearPrice: 4005.00 },
+      despachos: { old: 1125.00, current: 1012.50, yearPrice: 6075.00 }
+    },
+    annual: {
+      pyme: { old: 308.25, current: 277.43, yearPrice: 3329.10 },
+      empresarial: { old: 424.92, current: 382.43, yearPrice: 4589.10 },
+      corporativo: { old: 741.58, current: 667.43, yearPrice: 8009.10 },
+      despachos: { old: 1124.92, current: 1012.43, yearPrice: 12149.10 }
     }
+  };
 
-    let currentPeriod = 'monthly';
-    let currentIndex = 0;
-    let cardsData = [];
+  function formatMoney(val) {
+    return Math.round(val).toLocaleString('es-MX');
+  }
 
-    function getPlanTitle(key) {
-      const titles = { pyme: 'Siigo Fiscal PYME', empresarial: 'Siigo Fiscal Empresarial', corporativo: 'Siigo Fiscal Corporativo', despachos: 'Siigo Fiscal Despachos' };
-      return titles[key];
-    }
+  let currentPeriod = 'monthly';
+  let currentIndex = 0;
+  let cardsData = [];
 
-    function generateCards(period) {
-      const data = plansData[period];
-      const keys = ['pyme', 'empresarial', 'corporativo', 'despachos'];
-      const badges = ['Nuevo producto', 'Nuevo producto', 'Recomendado', 'Nuevo producto'];
-      const rfcLimit = ['1 RFC', '3 RFCs', '10 RFCs', 'RFCs ilimitados'];
-      const users = ['1 usuario', '1 usuario', '3 usuarios', '5 usuarios'];
-      const hasDiscount = period !== 'monthly';
+  function getPlanTitle(key) {
+    const titles = { pyme: 'Siigo Fiscal PYME', empresarial: 'Siigo Fiscal Empresarial', corporativo: 'Siigo Fiscal Corporativo', despachos: 'Siigo Fiscal Despachos' };
+    return titles[key];
+  }
 
-      return keys.map((key, i) => {
-        const p = data[key];
-        const periodText = period === 'monthly' ? 'Mensual' : (period === 'semestral' ? 'Semestral' : 'Anual');
-        const planName = getPlanTitle(key);
-        return `
+  function generateCards(period) {
+    const data = plansData[period];
+    const keys = ['pyme', 'empresarial', 'corporativo', 'despachos'];
+    const badges = ['Nuevo producto', 'Nuevo producto', 'Recomendado', 'Nuevo producto'];
+    const rfcLimit = ['1 RFC', '3 RFCs', '10 RFCs', 'RFCs ilimitados'];
+    const users = ['1 usuario', '1 usuario', '3 usuarios', '5 usuarios'];
+    const hasDiscount = period !== 'monthly';
+
+    return keys.map((key, i) => {
+      const p = data[key];
+      const periodText = period === 'monthly' ? 'Mensual' : (period === 'semestral' ? 'Semestral' : 'Anual');
+      const planName = getPlanTitle(key);
+      return `
       <div class="price-card" data-plan="${planName}" data-period="${periodText}" data-price="${Math.round(p.current)}">
         <div class="new-badge">${badges[i]}</div>
         <h3>${planName}</h3>
@@ -1849,128 +1850,151 @@
         <button class="btn-asesor-outline">Contacta a un asesor</button>
       </div>
     `;
-      });
-    }
-
-    function updateCarousel() {
-      cardsData = generateCards(currentPeriod);
-      const track = document.getElementById('pricingTrack');
-      track.innerHTML = cardsData.join('');
-      const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
-      track.style.transform = `translateX(-${currentIndex * (100 / itemsPerView)}%)`;
-      updateDots();
-      attachPriceButtons();
-    }
-
-    function attachPriceButtons() {
-      document.querySelectorAll('.btn-comprar').forEach(btn => {
-        btn.removeEventListener('click', handleBuyClick);
-        btn.addEventListener('click', handleBuyClick);
-      });
-      document.querySelectorAll('.btn-asesor-outline').forEach(btn => {
-        btn.removeEventListener('click', handleAdvisorClick);
-        btn.addEventListener('click', handleAdvisorClick);
-      });
-    }
-
-    function handleBuyClick(e) {
-      const card = e.target.closest('.price-card');
-      const plan = card.dataset.plan;
-      const period = card.dataset.period;
-      const price = card.dataset.price;
-      const message = `Hola, estoy interesado en comprar el plan *${plan}* en modalidad *${period}* con precio de $${price} MXN/mes. ¿Podrían darme más información?`;
-      window.open(`https://wa.me/525529079997?text=${encodeURIComponent(message)}`, '_blank');
-    }
-
-    function handleAdvisorClick(e) {
-      const message = "Hola, me gustaría contactar a un asesor para conocer más sobre Siigo Fiscal y los planes disponibles.";
-      window.open(`https://wa.me/525529079997?text=${encodeURIComponent(message)}`, '_blank');
-    }
-
-    function updateDots() {
-      const dotsContainer = document.getElementById('carouselDots');
-      const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
-      const total = Math.ceil(cardsData.length / itemsPerView);
-      dotsContainer.innerHTML = '';
-      for (let i = 0; i < total; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'dot' + (i === currentIndex ? ' active' : '');
-        dot.addEventListener('click', () => {
-          currentIndex = i;
-          updateCarousel();
-        });
-        dotsContainer.appendChild(dot);
-      }
-    }
-
-    document.getElementById('prevBtn').addEventListener('click', () => {
-      const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
-      const total = Math.ceil(cardsData.length / itemsPerView);
-      currentIndex = (currentIndex - 1 + total) % total;
-      updateCarousel();
     });
+  }
 
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
-      const total = Math.ceil(cardsData.length / itemsPerView);
-      currentIndex = (currentIndex + 1) % total;
-      updateCarousel();
+  function updateCarousel() {
+    cardsData = generateCards(currentPeriod);
+    const track = document.getElementById('pricingTrack');
+    track.innerHTML = cardsData.join('');
+    const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
+    track.style.transform = `translateX(-${currentIndex * (100 / itemsPerView)}%)`;
+    updateDots();
+    attachPriceButtons();
+  }
+
+  function attachPriceButtons() {
+    document.querySelectorAll('.btn-comprar').forEach(btn => {
+      btn.removeEventListener('click', handleBuyClick);
+      btn.addEventListener('click', handleBuyClick);
     });
+    document.querySelectorAll('.btn-asesor-outline').forEach(btn => {
+      btn.removeEventListener('click', handleAdvisorClick);
+      btn.addEventListener('click', handleAdvisorClick);
+    });
+  }
 
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentPeriod = btn.dataset.period;
-        currentIndex = 0;
+  function handleBuyClick(e) {
+    const card = e.target.closest('.price-card');
+    const plan = card.dataset.plan;
+    const period = card.dataset.period;
+    const price = card.dataset.price;
+    const message = `Hola, estoy interesado en comprar el plan *${plan}* en modalidad *${period}* con precio de $${price} MXN/mes. ¿Podrían darme más información?`;
+    window.open(`https://wa.me/525529079997?text=${encodeURIComponent(message)}`, '_blank');
+  }
+
+  function handleAdvisorClick(e) {
+    const message = "Hola, me gustaría contactar a un asesor para conocer más sobre Siigo Fiscal y los planes disponibles.";
+    window.open(`https://wa.me/525529079997?text=${encodeURIComponent(message)}`, '_blank');
+  }
+
+  function updateDots() {
+    const dotsContainer = document.getElementById('carouselDots');
+    const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
+    const total = Math.ceil(cardsData.length / itemsPerView);
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (i === currentIndex ? ' active' : '');
+      dot.addEventListener('click', () => {
+        currentIndex = i;
         updateCarousel();
       });
-    });
+      dotsContainer.appendChild(dot);
+    }
+  }
 
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
+    const total = Math.ceil(cardsData.length / itemsPerView);
+    currentIndex = (currentIndex - 1 + total) % total;
     updateCarousel();
-    window.addEventListener('resize', () => updateCarousel());
+  });
 
-    // Menú móvil
-    document.getElementById('mobileMenuToggle')?.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('show');
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
+    const total = Math.ceil(cardsData.length / itemsPerView);
+    currentIndex = (currentIndex + 1) % total;
+    updateCarousel();
+  });
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentPeriod = btn.dataset.period;
+      currentIndex = 0;
+      updateCarousel();
     });
+  });
 
-    // FAQ
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        q.parentElement.classList.toggle('active');
-      });
+  updateCarousel();
+  window.addEventListener('resize', () => updateCarousel());
+
+  // Menú móvil
+  document.getElementById('mobileMenuToggle')?.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('show');
+  });
+
+  // FAQ
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.parentElement.classList.toggle('active');
     });
+  });
 
-    // Menú funcional con scroll suave
-    document.querySelectorAll('.menu-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId && targetId.startsWith('#')) {
-          e.preventDefault();
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // ============================================
+  // MENÚ FUNCIONAL CON SCROLL SUAVE Y OFFSET PARA HEADER STICKY
+  // ============================================
+  document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          // Calcular la altura del header sticky
+          const header = document.querySelector('.main-header');
+          const headerHeight = header ? header.offsetHeight : 80;
+          // Offset adicional para mejor visualización (20px de espacio entre header y el título)
+          const offset = headerHeight + 20;
+          
+          // Obtener la posición del elemento destino
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          
+          // Realizar el scroll suave con el offset
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          
+          // Cerrar el menú móvil después de hacer clic (si está abierto)
+          const navLinks = document.getElementById('navLinks');
+          if (navLinks && navLinks.classList.contains('show')) {
+            navLinks.classList.remove('show');
           }
         }
-      });
+      }
     });
+  });
 
-    // Botones generales que envían a WhatsApp
-    const whatsappNumber = "525529079997";
-    function sendWhatsapp(message) {
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
-    }
+  // Botones generales que envían a WhatsApp
+  const whatsappNumber = "525529079997";
+  function sendWhatsapp(message) {
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  }
 
-    document.querySelectorAll('.btn-green, .btn-comprar, .btn-azul, .btn-login, #probarGratis, #comprarAhoraHero, #footerTrialBtn, #freeTrialBtn2').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        if(btn.classList.contains('btn-comprar') || btn.classList.contains('btn-asesor-outline')) return;
-        sendWhatsapp("Hola, estoy interesado en conocer más sobre Siigo Fiscal. Me gustaría recibir información.");
-      });
+  document.querySelectorAll('.btn-green, .btn-comprar, .btn-azul, .btn-login, #probarGratis, #comprarAhoraHero, #footerTrialBtn, #freeTrialBtn2').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      if(btn.classList.contains('btn-comprar') || btn.classList.contains('btn-asesor-outline')) return;
+      sendWhatsapp("Hola, estoy interesado en conocer más sobre Siigo Fiscal. Me gustaría recibir información.");
     });
-  </script>
+  });
+</script>
 
-<script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq63b9f14d1b7f684481102cc6b4ee11c1e27a55d4933078e3f2e27dee6c07dcf6" defer></script>
+<script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
+<script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq63b9f14d1b7f684481102cc6b4ee11c1e27a55d4933078e3f2e27dee6c07dcf6" defer></script>
 </body>
 
 </html>
