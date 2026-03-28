@@ -4,17 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Siigo Fiscal | Sincronización automática con visores del SAT México y descarga masiva de CFDIs</title>
+  <title>Siigo Fiscal | Sincronización automática con visores del SAT y descarga masiva de CFDIs</title>
   <meta name="description"
-    content="Automatiza tu proceso de conciliación fiscal con Siigo Fiscal. Sincroniza tus CFDIs con los visores del SAT México, detecta errores y recibe alarmas fiscales en cualquier sistema contable. Cumple con la Secretaría de Administración Tributaria (SAT).">
+    content="Automatiza tu proceso de conciliación fiscal con Siigo Fiscal. Sincroniza tus CFDIs con los visores del SAT, detecta errores y recibe alarmas fiscales en cualquier sistema contable.">
   <meta name="keywords"
-    content="Siigo Fiscal, CFDI, SAT México, Secretaría de Administración Tributaria, conciliación fiscal, IVA, ISR, facturación, despachos contables, visor SAT">
-  <meta name="author" content="Siigo Fiscal">
-  <meta property="og:title" content="Siigo Fiscal | Sincronización automática con visores del SAT México">
+    content="Siigo Fiscal, CFDI, SAT, conciliación fiscal, IVA, ISR, facturación, despachos contables">
+  <meta property="og:title" content="Siigo Fiscal | Sincronización automática con visores del SAT">
   <meta property="og:description"
-    content="Automatiza tu proceso de conciliación fiscal con Siigo Fiscal. Sincroniza tus CFDIs con los visores del SAT México. Cumple con la Secretaría de Administración Tributaria.">
+    content="Automatiza tu proceso de conciliación fiscal con Siigo Fiscal. Sincroniza tus CFDIs con los visores del SAT.">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_MX">
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts Nunito -->
@@ -148,7 +146,7 @@
     }
 
     .logo img {
-      height: 60px;
+      height: 45px;
       width: auto;
     }
 
@@ -165,7 +163,6 @@
       color: var(--gris-azulado);
       transition: 0.2s;
       font-size: 0.9rem;
-      cursor: pointer;
     }
 
     .nav-links a:hover {
@@ -935,24 +932,9 @@
     }
 
     .footer-logo img {
-      height: 100px;
+      height: 50px;
       width: auto;
       filter: brightness(0) invert(1);
-    }
-    .distribuidor-logo {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .distribuidor-logo img {
-      max-height: 60px;
-      width: auto;
-    }
-    .contact-info {
-      margin-top: 10px;
-      font-size: 0.8rem;
-    }
-    .contact-info p {
-      margin-bottom: 5px;
     }
 
     @media (max-width: 860px) {
@@ -1024,17 +1006,6 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 32px;
     }
-
-    /* Animación para el scroll suave y resaltado */
-    html {
-      scroll-behavior: smooth;
-    }
-    .menu-link {
-      transition: all 0.3s ease;
-    }
-    .menu-link:active {
-      transform: scale(0.95);
-    }
   </style>
 </head>
 
@@ -1079,28 +1050,32 @@
   <div class="main-header">
     <div class="container-custom">
       <div class="navbar-custom">
-        <div class="logo"><img src="assets/logo-siigo-fiscal-1.svg" alt="Siigo Fiscal" onerror="this.src='https://placehold.co/150x45/009dfe/white?text=Siigo+Fiscal'"></div>
+        <div class="logo"><img src="assets/logo-menu.png" alt="Siigo Fiscal"
+            onerror="this.src='https://placehold.co/150x45/009dfe/white?text=Siigo+Fiscal'"></div>
         <div class="mobile-menu-icon" id="mobileMenuToggle"><i class="fas fa-bars"></i></div>
         <div class="nav-links" id="navLinks">
-          <a href="#planes-precios" class="menu-link">Planes y precios</a>
-          <a href="#beneficiados" class="menu-link">Soluciones</a>
-          <a href="#prueba-gratis" class="menu-link">Prueba gratis</a>
-          <a href="#beneficiados" class="menu-link">Contadores</a>
-          <a href="#funciones" class="menu-link">📢 Siigo Fiscal <span class="badge-new">🆕</span></a>  
-          <button class="btn-login">Crear cuenta</button>
+          <a href="#">Planes y precios</a>
+          <a href="#">Soluciones</a>
+          <a href="#">Prueba gratis</a>
+          <a
+            href="#">Contadores</a>
+            <a href="#">Blog</a>
+          <a href="#">📢 Siigo Fiscal <span class="badge-new">🆕</span></a>  
+          <button class="btn-login">Iniciar sesión</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- HERO -->
-  <div class="hero" id="inicio">
+  <div class="hero">
     <div class="container-custom">
       <div class="row">
         <div class="col-lg-6 hero-content">
           <div class="hero-badge"><i class="fas fa-star"></i> Nuevo producto</div>
-          <h1>Siigo Fiscal: Sincronización automática con visores del SAT México y descarga masiva de CFDIs</h1>
-          <p>Automatiza tu proceso de conciliación fiscal, ¡sincroniza tu información con los visores del SAT (Secretaría de Administración Tributaria)! Elige tu plan ideal y obtén acompañamiento experto especializado para reducir riesgos fiscales.</p>
+          <h1>Siigo Fiscal: Sincronización automática con visores del SAT y descarga masiva de CFDIs</h1>
+          <p>Automatiza tu proceso de conciliación fiscal, ¡sincroniza tu información con los visores del SAT! Elige tu
+            plan ideal y obtén acompañamiento experto especializado para reducir riesgos fiscales.</p>
           <div class="hero-buttons">
             <button class="btn-green" id="probarGratis">Probar sin costo <i class="fas fa-arrow-right"></i></button>
             <button class="btn-azul" id="comprarAhoraHero">Comprar ahora</button>
@@ -1112,10 +1087,11 @@
   </div>
 
   <!-- Tarjetas beneficios -->
-  <div class="section" id="beneficios">
+  <div class="section">
     <div class="container-custom">
       <h2 class="section-title">¿Por qué elegir Siigo Fiscal?</h2>
-      <p class="section-subtitle">Automatiza el proceso de conciliación con los visores del SAT México, valida tus CFDIs y recibe alarmas fiscales, ¡en cualquier sistema contable!</p>
+      <p class="section-subtitle">Automatiza el proceso de conciliación con los visores del SAT México, valida tus CFDIs y
+        recibe alarmas fiscales, ¡en cualquier sistema contable!</p>
       <div class="grid-3-custom">
         <div class="card-benefit">
           <div class="card-row-benefit">
@@ -1124,7 +1100,8 @@
               <h3>Simplifica la conciliación con el SAT</h3>
             </div>
           </div>
-          <p>Sincroniza diariamente tus CFDI's de hasta 5 años con el visor del SAT. Descarga, valida y organiza automáticamente con filtros por tipo, periodo o ejercicio fiscal.</p>
+          <p>Sincroniza diariamente tus CFDI's de hasta 5 años con el visor del SAT. Descarga, valida y organiza
+            automáticamente con filtros por tipo, periodo o ejercicio fiscal.</p>
         </div>
         <div class="card-benefit">
           <div class="card-row-benefit">
@@ -1133,7 +1110,8 @@
               <h3>Control sobre tus CFDI's</h3>
             </div>
           </div>
-          <p>Revisa de forma inmediata que tus CFDI's cumplan con los requisitos fiscales de la guía 4.0: detecta errores y CFDI's cancelados, recibe notificaciones.</p>
+          <p>Revisa de forma inmediata que tus CFDI's cumplan con los requisitos fiscales de la guía 4.0: detecta
+            errores y CFDI's cancelados, recibe notificaciones.</p>
         </div>
         <div class="card-benefit">
           <div class="card-row-benefit">
@@ -1142,7 +1120,8 @@
               <h3>Evita multas por materialidad</h3>
             </div>
           </div>
-          <p>Detecta inconsistencias a tiempo, evita multas y mejora el control fiscal, compatible con cualquier sistema contable.</p>
+          <p>Detecta inconsistencias a tiempo, evita multas y mejora el control fiscal, compatible con cualquier sistema
+            contable.</p>
         </div>
         <div class="card-benefit">
           <div class="card-row-benefit">
@@ -1151,7 +1130,8 @@
               <h3>Cálculo del IVA e ISR</h3>
             </div>
           </div>
-          <p>Calcula automáticamente el pago de impuestos con base en los CFDI's del SAT, complementos de pago y notas de crédito.</p>
+          <p>Calcula automáticamente el pago de impuestos con base en los CFDI's del SAT, complementos de pago y notas
+            de crédito.</p>
         </div>
         <div class="card-benefit">
           <div class="card-row-benefit">
@@ -1169,27 +1149,33 @@
               <h3>Prueba Siigo Fiscal gratis</h3>
             </div>
           </div>
-          <p>Evalúa funcionalidades por 15 días. Elige el plan ideal.</p><button style="background:var(--azul-base); border:none; padding:8px 20px; border-radius:10px; color:white; margin-top:16px;">¿Quiero mi prueba gratis!</button>
+          <p>Evalúa funcionalidades por 15 días. Elige el plan ideal.</p><button
+            style="background:var(--azul-base); border:none; padding:8px 20px; border-radius:10px; color:white; margin-top:16px;">¿Quiero
+            mi prueba gratis!</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Quién puede beneficiarse -->
-  <div class="section" id="beneficiados" style="background:#f9fafb">
+  <div class="section" style="background:#f9fafb">
     <div class="container-custom">
       <h2 class="section-title">¿Quién puede beneficiarse de usar Siigo Fiscal?</h2>
       <div class="row g-4 justify-content-center">
         <div class="col-md-5">
-          <div class="benefit-card-custom"><img src="assets/contadores.webp" alt="Contadores" onerror="this.src='https://placehold.co/200x150/2d3a4b/white?text=Contadores'">
+          <div class="benefit-card-custom"><img src="assets/contadores.webp" alt="Contadores"
+              onerror="this.src='https://placehold.co/200x150/2d3a4b/white?text=Contadores'">
             <h3>Contadores</h3>
-            <p>Ahorra tiempo en tu gestión de CFDIs de tus clientes: detecta errores u omisiones automáticamente y obtén el detalle de los impuestos precargados por el SAT, ¡todo desde una sola plataforma!</p>
+            <p>Ahorra tiempo en tu gestión de CFDIs de tus clientes: detecta errores u omisiones automáticamente y obtén
+              el detalle de los impuestos precargados por el SAT, ¡todo desde una sola plataforma!</p>
           </div>
         </div>
         <div class="col-md-5">
-          <div class="benefit-card-custom benefit-card-dark"><img src="assets/despachos.webp" alt="Despachos contables" onerror="this.src='https://placehold.co/200x150/7ac23a/white?text=Despachos'">
+          <div class="benefit-card-custom benefit-card-dark"><img src="assets/despachos.webp" alt="Despachos contables"
+              onerror="this.src='https://placehold.co/200x150/7ac23a/white?text=Despachos'">
             <h3>Despachos contables</h3>
-            <p>¡Ideal para llevar el control contable y fiscal de múltiples empresas! Con Siigo Fiscal puedes asignar más de un contador para cada empresa por año fiscal para mayor control.</p>
+            <p>¡Ideal para llevar el control contable y fiscal de múltiples empresas! Con Siigo Fiscal puedes asignar
+              más de un contador para cada empresa por año fiscal para mayor control.</p>
           </div>
         </div>
       </div>
@@ -1197,7 +1183,7 @@
   </div>
 
   <!-- FUNCIONES -->
-  <div class="section" id="funciones">
+  <div class="section">
     <div class="container-custom">
       <h2 class="section-title">Funciones que transforman tu control fiscal</h2>
       <div class="feature-radio-group" id="featureRadios">
@@ -1211,14 +1197,15 @@
         <div class="feature-radio" data-feature="acompañamiento">⭐Acompañamiento especializado</div>
       </div>
       <div class="feature-detail-panel">
-        <div class="feature-img"><img src="assets/funciones/conciliacion.webp" alt="Funciones" onerror="this.src='https://placehold.co/300x200/009dfe/white?text=Funciones'"></div>
+        <div class="feature-img"><img src="assets/funciones/conciliacion.webp" alt="Funciones"
+            onerror="this.src='https://placehold.co/300x200/009dfe/white?text=Funciones'"></div>
         <div class="feature-info" id="featureInfo"></div>
       </div>
     </div>
   </div>
 
   <!-- PRECIOS CON CAROUSEL -->
-  <div class="section" id="planes-precios" style="background:#fefefe">
+  <div class="section" style="background:#fefefe">
     <div class="container-custom">
       <h2 class="section-title">¡Encuentra el plan perfecto de Siigo Fiscal!</h2>
       <div class="period-indicator">💡 Selecciona la periodicidad que mejor se adapte a tus necesidades</div>
@@ -1243,10 +1230,12 @@
   </div>
 
   <!-- PRUEBA GRATIS -->
-  <div class="container-custom" id="prueba-gratis" style="margin-bottom: 40px;">
-    <div class="full-bg-section" style="background-image: url('assets/bg-prueba-siigo.webp'); background-size: cover; border-radius: 10px;">
+  <div class="container-custom" style="margin-bottom: 40px;">
+    <div class="full-bg-section"
+      style="background-image: url('assets/bg-prueba-siigo.webp'); background-size: cover; border-radius: 10px;">
       <div class="bg-inner">
-        <div class="bg-img-col"><i class="fas fa-chalkboard-user" style="font-size: 5rem; color: transparent;"></i></div>
+        <div class="bg-img-col"><i class="fas fa-chalkboard-user" style="font-size: 5rem; color: transparent;"></i>
+        </div>
         <div class="bg-text-col">
           <h2 class="pulse-text">✨ ¡Prueba Siigo Fiscal<br> completamente gratis! ✨</h2>
           <p>Inicia tu prueba gratuita de 15 días para evaluar todas las funcionalidades que Siigo Fiscal te ofrece.</p>
@@ -1257,41 +1246,73 @@
   </div>
 
   <!-- FAQ - con todas las respuestas completas -->
-  <div class="section" id="faq">
+  <div class="section">
     <div class="container-custom">
       <h2 class="section-title">Preguntas frecuentes</h2>
       <div id="faqContainer">
         <div class="faq-item active">
           <div class="faq-question">¿Cuáles son los beneficios de usar Siigo Fiscal? <i class="fas fa-plus"></i></div>
-          <div class="faq-answer">Siigo Fiscal te permite mantener un control preciso y actualizado de tu información fiscal gracias a la sincronización diaria con los visores del SAT. Con esta herramienta puedes detectar y prevenir discrepancias con la autoridad de forma oportuna, personalizar la forma en que organizas y visualizas tus facturas electrónicas, y descargar tus archivos a Excel para un análisis detallado.</div>
+          <div class="faq-answer">Siigo Fiscal te permite mantener un control preciso y actualizado de tu información
+            fiscal gracias a la sincronización diaria con los visores del SAT. Con esta herramienta puedes detectar y
+            prevenir discrepancias con la autoridad de forma oportuna, personalizar la forma en que organizas y
+            visualizas tus facturas electrónicas, y descargar tus archivos a Excel para un análisis detallado.</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">¿Qué es y para qué sirve el sistema Siigo Fiscal? <i class="fas fa-plus"></i></div>
-          <div class="faq-answer">Siigo Fiscal es una herramienta diseñada para facilitar la revisión y validación de tu contabilidad directamente con los visores del SAT, gracias a su sincronización diaria. Con este sistema puedes conocer exactamente cómo ve la autoridad tu contabilidad, asegurarte de que tus facturas electrónicas cumplan con todos los requisitos fiscales y detectar oportunamente posibles errores o discrepancias.</div>
+          <div class="faq-answer">Siigo Fiscal es una herramienta diseñada para facilitar la revisión y validación de tu
+            contabilidad directamente con los visores del SAT, gracias a su sincronización diaria. Con este sistema
+            puedes conocer exactamente cómo ve la autoridad tu contabilidad, asegurarte de que tus facturas electrónicas
+            cumplan con todos los requisitos fiscales y detectar oportunamente posibles errores o discrepancias.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">¿Para qué sirve la asesoría gratuita de una hora de Siigo Fiscal? <i class="fas fa-plus"></i></div>
-          <div class="faq-answer">Todos los planes de Siigo Fiscal incluyen acceso a una hora de acompañamiento especializado ¡completamente gratis! Después de procesar tu compra, podrás elegir uno de los siguientes temas para abordar durante tu hora de asesoría: Acompañamiento sobre diferencias de visor SAT vs Siigo Fiscal, o Acompañamiento a Carta de Invitación orientado a enseñar cómo encontrar, consultar y analizar la información de la herramienta para revisión de Cartas de Invitación del SAT.</div>
+          <div class="faq-question">¿Para qué sirve la asesoría gratuita de una hora de Siigo Fiscal? <i
+              class="fas fa-plus"></i></div>
+          <div class="faq-answer">Todos los planes de Siigo Fiscal incluyen acceso a una hora de acompañamiento
+            especializado ¡completamente gratis! Después de procesar tu compra, podrás elegir uno de los siguientes
+            temas para abordar durante tu hora de asesoría: Acompañamiento sobre diferencias de visor SAT vs Siigo
+            Fiscal, o Acompañamiento a Carta de Invitación orientado a enseñar cómo encontrar, consultar y analizar la
+            información de la herramienta para revisión de Cartas de Invitación del SAT.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">¿Cómo aseguro la correcta configuración de mi sistema Siigo Fiscal? <i class="fas fa-plus"></i></div>
-          <div class="faq-answer">Para garantizar la correcta implementación de tu software fiscal, puedes: Acceder al portal de clientes, donde encontrarás tutoriales, preguntas frecuentes y guías para el uso de tu sistema; Contactar a nuestro servicio telefónico para atender consultas básicas; o Agendar una sesión con un asesor experto para resolver dudas particulares.</div>
+          <div class="faq-question">¿Cómo aseguro la correcta configuración de mi sistema Siigo Fiscal? <i
+              class="fas fa-plus"></i></div>
+          <div class="faq-answer">Para garantizar la correcta implementación de tu software fiscal, puedes: Acceder al
+            portal de clientes, donde encontrarás tutoriales, preguntas frecuentes y guías para el uso de tu sistema;
+            Contactar a nuestro servicio telefónico para atender consultas básicas; o Agendar una sesión con un asesor
+            experto para resolver dudas particulares.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">¿Por qué es necesario llevar un control de los CFDI emitidos y recibidos? <i class="fas fa-plus"></i></div>
-          <div class="faq-answer">Llevar un control preciso de tus CFDIs es fundamental para evitar diferencias entre la información que tiene el SAT y la que declaras. La autoridad fiscal utiliza estos comprobantes para validar tus ingresos, gastos e impuestos; si detecta inconsistencias, puede enviarte requerimientos o cartas invitación que podrían resultar en revisiones fiscales o multas.</div>
+          <div class="faq-question">¿Por qué es necesario llevar un control de los CFDI emitidos y recibidos? <i
+              class="fas fa-plus"></i></div>
+          <div class="faq-answer">Llevar un control preciso de tus CFDIs es fundamental para evitar diferencias entre la
+            información que tiene el SAT y la que declaras. La autoridad fiscal utiliza estos comprobantes para validar
+            tus ingresos, gastos e impuestos; si detecta inconsistencias, puede enviarte requerimientos o cartas
+            invitación que podrían resultar en revisiones fiscales o multas.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">¿Qué tan probable es que el SAT envíe un requerimiento a mi empresa o a mis clientes? <i class="fas fa-plus"></i></div>
-          <div class="faq-answer">Durante 2024, el SAT envió en promedio 3.5 requerimientos o cartas invitación por contribuyente, y se estima que en 2025 la cifra crecerá a 6 requerimientos. Esto demuestra que la autoridad está reforzando sus procesos de revisión automatizada, por lo que llevar un control fiscal preciso y actualizado es clave para reducir riesgos y evitar sanciones innecesarias.</div>
+          <div class="faq-question">¿Qué tan probable es que el SAT envíe un requerimiento a mi empresa o a mis
+            clientes? <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">Durante 2024, el SAT envió en promedio 3.5 requerimientos o cartas invitación por
+            contribuyente, y se estima que en 2025 la cifra crecerá a 6 requerimientos. Esto demuestra que la autoridad
+            está reforzando sus procesos de revisión automatizada, por lo que llevar un control fiscal preciso y
+            actualizado es clave para reducir riesgos y evitar sanciones innecesarias.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">¿Cómo me ayuda Siigo Fiscal a conciliar el IVA de mis hojas de trabajo con los visores y precargado del SAT? <i class="fas fa-plus"></i></div>
-          <div class="faq-answer">Siigo Fiscal calcula automáticamente el IVA con el mismo algoritmo del SAT, utilizando la información de las facturas emitidas y recibidas (PUE) y el IVA de las facturas (PPD) relacionadas a los CFDI de pago. De esta forma, puedes identificar con precisión qué facturas fueron incluidas o excluidas, especialmente en el IVA acreditable, lo que facilita una conciliación exacta con los visores y el precargado del SAT.</div>
+          <div class="faq-question">¿Cómo me ayuda Siigo Fiscal a conciliar el IVA de mis hojas de trabajo con los
+            visores y precargado del SAT? <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">Siigo Fiscal calcula automáticamente el IVA con el mismo algoritmo del SAT, utilizando
+            la información de las facturas emitidas y recibidas (PUE) y el IVA de las facturas (PPD) relacionadas a los
+            CFDI de pago. De esta forma, puedes identificar con precisión qué facturas fueron incluidas o excluidas,
+            especialmente en el IVA acreditable, lo que facilita una conciliación exacta con los visores y el precargado
+            del SAT.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">¿Cómo me ayuda Siigo Fiscal a detectar los CFDI de pagos pendientes de emitir y recibir? <i class="fas fa-plus"></i></div>
-          <div class="faq-answer">Siigo Fiscal genera una vista en tiempo real que identifica facturas emitidas o recibidas a crédito (PPD) que aún no tienen CFDI de pago relacionado, sin importar el sistema de facturación que utilices. Esto te permite dar seguimiento diario o semanal, evitando esperarte hasta el cierre del periodo para detectar pendientes y reduciendo riesgos de omisiones en tus declaraciones.</div>
+          <div class="faq-question">¿Cómo me ayuda Siigo Fiscal a detectar los CFDI de pagos pendientes de emitir y
+            recibir? <i class="fas fa-plus"></i></div>
+          <div class="faq-answer">Siigo Fiscal genera una vista en tiempo real que identifica facturas emitidas o
+            recibidas a crédito (PPD) que aún no tienen CFDI de pago relacionado, sin importar el sistema de facturación
+            que utilices. Esto te permite dar seguimiento diario o semanal, evitando esperarte hasta el cierre del
+            periodo para detectar pendientes y reduciendo riesgos de omisiones en tus declaraciones.</div>
         </div>
       </div>
     </div>
@@ -1299,12 +1320,14 @@
 
   <!-- ACOMPAÑAMIENTO con efecto de movimiento -->
   <div class="container-custom" style="margin-bottom: 60px;">
-    <div class="full-bg-section" style="background-image: url('assets/bg-aprovechacompanamiento.webp'); background-size: cover; border-radius: 10px;">
+    <div class="full-bg-section"
+      style="background-image: url('assets/bg-aprovechacompanamiento.webp'); background-size: cover; border-radius: 10px;">
       <div class="bg-inner">
         <div class="bg-img-col"><i class="fas fa-handshake" style="font-size: 5rem; color: transparent;"></i></div>
         <div class="bg-text-col">
           <h2 class="pulse-text">✨ Aprovecha el Acompañamiento<br> Especializado de Siigo Fiscal ✨</h2>
-          <p>Integra los beneficios de Siigo Fiscal a tus procesos diarios con la asesoría exclusiva de 1 hora. ¡Elige el plan ideal para tus necesidades y disfruta de este beneficio!</p>
+          <p>Integra los beneficios de Siigo Fiscal a tus procesos diarios con la asesoría exclusiva de 1 hora. ¡Elige
+            el plan ideal para tus necesidades y disfruta de este beneficio!</p>
           <button class="btn-green" style="margin-right: 15px;">Comprar ahora</button>
           <button class="btn-azul">Contacta a un asesor</button>
         </div>
@@ -1312,367 +1335,42 @@
     </div>
   </div>
 
-  <!-- FOOTER con nubes animadas y datos de contacto -->
-  <!-- FOOTER con nubes animadas y datos de contacto mejorados -->
-<footer>
-  <img src="assets/nubes-footer.png" alt="Nubes" class="footer-nubes" onerror="this.style.display='none'">
-  <div class="container-custom">
-    <!-- Sección logo + texto distribuidor autorizado en同一行 -->
-    <div class="footer-header">
-      <div class="footer-logo">
-        <img src="assets/sello-web-positivo1.png" alt="Siigo Fiscal" onerror="this.src='https://placehold.co/180x60/009dfe/white?text=Siigo+Fiscal'">
-      </div>
-      <div class="distribuidor-info">
-        <img src="sello-web-positivo1.png" alt="Distribuidor Autorizado" class="distribuidor-sello">
-        <div class="distribuidor-texto">
-          <strong>Distribuidor Autorizado Siigo Fiscal</strong><br>
-          <span>Somos distribuidores oficiales certificados por Siigo Aspel. Garantizamos soporte especializado, asesoría personalizada y los mejores precios en soluciones fiscales y contables para México.</span>
+  <!-- FOOTER con nubes animadas -->
+  <footer>
+    <img src="assets/nubes-footer.png" alt="Nubes" class="footer-nubes" onerror="this.style.display='none'">
+    <div class="container-custom">
+      <div class="footer-logo"><img src="assets/Logo-Siigo-Aspel.svg" alt="Siigo Aspel"
+          onerror="this.src='https://placehold.co/150x50/ffffff/009dfe?text=Siigo+Aspel'"></div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Nosotros</h4><a>¿Quiénes somos?</a><a>Alianzas estratégicas</a><a>Certificaciones</a><a>Por qué Siigo</a>
+        </div>
+        <div class="footer-col">
+          <h4>Soluciones</h4><a>Siigo Nube</a><a>Siigo Fiscal</a><a>COI</a><a>NOI SAE</a><a>Facture</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contenido</h4><a>Blog</a><a>Eventos</a><a>Testimonios</a><a>Webinars</a><a>Mapa del
+            sitio</a><a>Sugerencias</a>
+        </div>
+        <div class="footer-col">
+          <h4>Aplicaciones</h4><a>ADM</a><a>ADM Tienda</a><a>NOI Asistente</a>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces rápidos</h4><a>Descargar reinstallables</a><a>Activa tu sistema</a><a>Manuales</a><a>Comprar en
+            línea</a><a>Cancelar CFDI</a>
+        </div>
+        <div class="footer-col">
+          <h4>Políticas</h4><a>Condiciones de uso</a><a>Términos y condiciones</a><a>Aviso de privacidad</a><a>Política
+            de privacidad</a><a>Contadores aliados</a>
+        </div>
+        <div class="footer-col">
+          <h4>Países</h4><a>Colombia</a><a>Chile</a><a>Ecuador</a><a>México</a><a>Perú</a><a>Uruguay</a>
         </div>
       </div>
+      <div class="copyright" style="text-align:center; margin-top:40px; font-size:0.7rem">Copyright© Todos los Derechos
+        Reservados SICONT MEX S.A. DE CV México 2023</div>
     </div>
-
-    <div class="footer-grid">
-      <!-- Sucursales con mejor visualización -->
-      <div class="footer-col sucursales-col">
-        <h4><i class="fas fa-map-marker-alt"></i> Nuestras Sucursales</h4>
-        <div class="sucursales-lista">
-          <div class="sucursal-item">
-            <i class="fas fa-city"></i>
-            <div class="sucursal-detalle">
-              <strong>CDMX</strong>
-              <span><i class="fas fa-phone-alt"></i> 55 2907 9997</span>
-            </div>
-          </div>
-          <div class="sucursal-item">
-            <i class="fas fa-city"></i>
-            <div class="sucursal-detalle">
-              <strong>Monterrey, N.L.</strong>
-              <span><i class="fas fa-phone-alt"></i> 81 1352 2222</span>
-            </div>
-          </div>
-          <div class="sucursal-item">
-            <i class="fas fa-church"></i>
-            <div class="sucursal-detalle">
-              <strong>San Luis Potosí, SLP</strong>
-              <span><i class="fas fa-phone-alt"></i> 444 669 1970</span>
-            </div>
-          </div>
-          <div class="sucursal-item">
-            <i class="fas fa-umbrella-beach"></i>
-            <div class="sucursal-detalle">
-              <strong>Los Cabos, BCS</strong>
-              <span><i class="fas fa-phone-alt"></i> 624 211 7712</span>
-            </div>
-          </div>
-          <div class="sucursal-item contacto-email">
-            <i class="fas fa-envelope"></i>
-            <div class="sucursal-detalle">
-              <strong>Correo electrónico</strong>
-              <span><i class="fas fa-inbox"></i> contacto@siigofiscalmx.com</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4><i class="fas fa-globe-americas"></i> Países</h4>
-        <div class="paises-lista">
-          <a><i class="fas fa-flag-checkered"></i> Colombia</a>
-          <a><i class="fas fa-flag-checkered"></i> Chile</a>
-          <a><i class="fas fa-flag-checkered"></i> Ecuador</a>
-          <a><i class="fas fa-flag-checkered"></i> México</a>
-          <a><i class="fas fa-flag-checkered"></i> Perú</a>
-          <a><i class="fas fa-flag-checkered"></i> Uruguay</a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4><i class="fas fa-headset"></i> Atención al cliente</h4>
-        <a><i class="fab fa-whatsapp"></i> WhatsApp: 55 2907 9997</a>
-        <a><i class="fas fa-clock"></i> Horario: L-V 9:00 a 18:00</a>
-        <a><i class="fas fa-envelope"></i> soporte@siigofiscalmx.com</a>
-        <a><i class="fas fa-chalkboard-user"></i> Asesoría especializada</a>
-      </div>
-    </div>
-
-    <div class="copyright">
-      <p>Copyright© Todos los Derechos Reservados SICONT MEX S.A. DE CV México 2023</p>
-    </div>
-  </div>
-</footer>
-
-<style>
-  /* Estilos adicionales para el footer mejorado */
-  footer {
-    background: var(--azul-base);
-    color: #e2e8f0;
-    padding: 50px 0 30px;
-    margin-top: 60px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .footer-nubes {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 300px;
-    height: auto;
-    pointer-events: none;
-    z-index: 1;
-    animation: cloudMove 8s ease-in-out infinite;
-  }
-
-  @keyframes cloudMove {
-    0% { transform: translateX(-20px) translateY(0); }
-    50% { transform: translateX(20px) translateY(-10px); }
-    100% { transform: translateX(-20px) translateY(0); }
-  }
-
-  /* Header del footer: logo + info distribuidor */
-  .footer-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 45px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    z-index: 2;
-  }
-
-  .footer-logo img {
-    height: 90px;
-    width: auto;
-    filter: brightness(0) invert(1);
-  }
-
-  .distribuidor-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 12px 24px;
-    border-radius: 16px;
-    backdrop-filter: blur(4px);
-    flex-wrap: wrap;
-  }
-
-  .distribuidor-sello {
-    height: 55px;
-    width: auto;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-  }
-
-  .distribuidor-texto {
-    max-width: 400px;
-  }
-
-  .distribuidor-texto strong {
-    color: white;
-    font-size: 0.95rem;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  .distribuidor-texto span {
-    font-size: 0.75rem;
-    color: #cbd5e6;
-    line-height: 1.4;
-  }
-
-  /* Grid del footer */
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
-    position: relative;
-    z-index: 2;
-    margin-bottom: 40px;
-  }
-
-  .footer-col h4 {
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-left: 3px solid var(--verde-base);
-    padding-left: 12px;
-  }
-
-  .footer-col h4 i {
-    color: #ffffff;
-    font-size: 1rem;
-  }
-
-  .footer-col a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #e2e8f0;
-    text-decoration: none;
-    margin-bottom: 12px;
-    font-size: 0.85rem;
-    transition: all 0.2s ease;
-    cursor: pointer;
-  }
-
-  .footer-col a:hover {
-    color: white;
-    transform: translateX(5px);
-  }
-
-  .footer-col a i {
-    width: 24px;
-    color: #ffffff;
-  }
-
-  /* Sucursales estilo mejorado */
-  .sucursales-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .sucursal-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 12px 15px;
-    border-radius: 12px;
-    transition: all 0.2s;
-  }
-
-  .sucursal-item:hover {
-    background: rgba(255, 255, 255, 0.12);
-    transform: translateX(5px);
-  }
-
-  .sucursal-item > i {
-    font-size: 1.3rem;
-    color: #ffffff;
-    min-width: 32px;
-    text-align: center;
-    margin-top: 2px;
-  }
-
-  .sucursal-detalle {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .sucursal-detalle strong {
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 700;
-  }
-
-  .sucursal-detalle span {
-    font-size: 0.8rem;
-    color: #cbd5e6;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .sucursal-detalle span i {
-    font-size: 0.7rem;
-    color: #ffffff;
-  }
-
-  .contacto-email {
-    background: rgba(122, 194, 58, 0.15);
-    border-left: 2px solid var(--verde-base);
-  }
-
-  /* Países lista */
-  .paises-lista {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .paises-lista a {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    margin-bottom: 0;
-    display: inline-flex;
-    transition: all 0.2s;
-  }
-
-  .paises-lista a:hover {
-    background: var(--verde-base);
-    transform: translateY(-2px);
-  }
-
-  .paises-lista a i {
-    width: auto;
-    margin-right: 6px;
-  }
-
-  /* Copyright */
-  .copyright {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    font-size: 0.7rem;
-    color: #cbd5e6;
-    position: relative;
-    z-index: 2;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .footer-header {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .distribuidor-info {
-      justify-content: center;
-      text-align: center;
-    }
-    
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-    
-    .sucursal-item {
-      padding: 10px 12px;
-    }
-    
-    .paises-lista {
-      justify-content: center;
-    }
-    
-    .footer-col h4 {
-      justify-content: center;
-      border-left: none;
-      border-bottom: 2px solid var(--verde-base);
-      padding-bottom: 8px;
-      margin-bottom: 16px;
-    }
-    
-    .footer-col a {
-      justify-content: center;
-    }
-    
-    .sucursal-item {
-      justify-content: flex-start;
-    }
-  }
-</style>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -1680,14 +1378,29 @@
      * ============================================
      * SIIGO FISCAL - SCRIPT PRINCIPAL
      * ============================================
+     * Este script maneja la funcionalidad dinámica de la landing page:
+     * - Panel de funciones interactivas (feature radios)
+     * - Carousel de precios con cambio de periodicidad
+     * - Menú móvil responsive
+     * - FAQ acordeón
+     * - Alertas de botones de acción
+     * ============================================
      */
 
-    // Funciones interactivas
+    /**
+     * ============================================
+     * SECCIÓN 1: PANEL DE FUNCIONES INTERACTIVAS
+     * ============================================
+     * Maneja los radios que cambian el contenido dinámicamente
+     * Cada función tiene su propio título y lista de características
+     */
+
+    // Base de datos de funciones con sus títulos y descripciones completas
     const featureData = {
       sync: {
         title: "Sincroniza tus CFDIs",
         items: [
-          "Ahorra tiempo con la sincronización de tus CFDIS con el visor de XML del SAT México.",
+          "Ahorra tiempo con la sincronización de tus CFDIS con el visor de XML del SAT.",
           "Descarga automáticamente todos tus CFDIs emitidos y recibidos todos los días, o descarga tu información cuando lo necesites.",
           "Consulta el histórico de tu información fiscal de hasta 5 años.",
           "Organiza los comprobantes por tipo, periodo o ejercicio fiscal para una gestión ágil de manera automática."
@@ -1771,7 +1484,12 @@
     });
     updateFeaturePanel('sync');
 
-    // Carousel de precios y WhatsApp
+    /**
+     * ============================================
+     * SECCIÓN 2: CAROUSEL DE PRECIOS Y CAMBIO DE PERIODICIDAD
+     * ============================================
+     */
+
     const plansData = {
       monthly: {
         pyme: { current: 354.00 },
@@ -1801,14 +1519,10 @@
     let currentIndex = 0;
     let cardsData = [];
 
-    function getPlanTitle(key) {
-      const titles = { pyme: 'Siigo Fiscal PYME', empresarial: 'Siigo Fiscal Empresarial', corporativo: 'Siigo Fiscal Corporativo', despachos: 'Siigo Fiscal Despachos' };
-      return titles[key];
-    }
-
     function generateCards(period) {
       const data = plansData[period];
       const keys = ['pyme', 'empresarial', 'corporativo', 'despachos'];
+      const titles = ['Siigo Fiscal PYME', 'Siigo Fiscal Empresarial', 'Siigo Fiscal Corporativo', 'Siigo Fiscal Despachos'];
       const badges = ['Nuevo producto', 'Nuevo producto', 'Recomendado', 'Nuevo producto'];
       const rfcLimit = ['1 RFC', '3 RFCs', '10 RFCs', 'RFCs ilimitados'];
       const users = ['1 usuario', '1 usuario', '3 usuarios', '5 usuarios'];
@@ -1816,12 +1530,10 @@
 
       return keys.map((key, i) => {
         const p = data[key];
-        const periodText = period === 'monthly' ? 'Mensual' : (period === 'semestral' ? 'Semestral' : 'Anual');
-        const planName = getPlanTitle(key);
         return `
-      <div class="price-card" data-plan="${planName}" data-period="${periodText}" data-price="${Math.round(p.current)}">
+      <div class="price-card">
         <div class="new-badge">${badges[i]}</div>
-        <h3>${planName}</h3>
+        <h3>${titles[i]}</h3>
         ${hasDiscount && p.old ? `
           <div>
             <span class="old-price">Antes $${formatMoney(p.old)} / mes</span>
@@ -1859,32 +1571,6 @@
       const itemsPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
       track.style.transform = `translateX(-${currentIndex * (100 / itemsPerView)}%)`;
       updateDots();
-      attachPriceButtons();
-    }
-
-    function attachPriceButtons() {
-      document.querySelectorAll('.btn-comprar').forEach(btn => {
-        btn.removeEventListener('click', handleBuyClick);
-        btn.addEventListener('click', handleBuyClick);
-      });
-      document.querySelectorAll('.btn-asesor-outline').forEach(btn => {
-        btn.removeEventListener('click', handleAdvisorClick);
-        btn.addEventListener('click', handleAdvisorClick);
-      });
-    }
-
-    function handleBuyClick(e) {
-      const card = e.target.closest('.price-card');
-      const plan = card.dataset.plan;
-      const period = card.dataset.period;
-      const price = card.dataset.price;
-      const message = `Hola, estoy interesado en comprar el plan *${plan}* en modalidad *${period}* con precio de $${price} MXN/mes. ¿Podrían darme más información?`;
-      window.open(`https://wa.me/525529079997?text=${encodeURIComponent(message)}`, '_blank');
-    }
-
-    function handleAdvisorClick(e) {
-      const message = "Hola, me gustaría contactar a un asesor para conocer más sobre Siigo Fiscal y los planes disponibles.";
-      window.open(`https://wa.me/525529079997?text=${encodeURIComponent(message)}`, '_blank');
     }
 
     function updateDots() {
@@ -1930,44 +1616,35 @@
     updateCarousel();
     window.addEventListener('resize', () => updateCarousel());
 
-    // Menú móvil
+    /**
+     * ============================================
+     * SECCIÓN 3: MENÚ MÓVIL RESPONSIVE
+     * ============================================
+     */
     document.getElementById('mobileMenuToggle')?.addEventListener('click', () => {
       document.getElementById('navLinks').classList.toggle('show');
     });
 
-    // FAQ
+    /**
+     * ============================================
+     * SECCIÓN 4: ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
+     * ============================================
+     */
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
         q.parentElement.classList.toggle('active');
       });
     });
 
-    // Menú funcional con scroll suave
-    document.querySelectorAll('.menu-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId && targetId.startsWith('#')) {
-          e.preventDefault();
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
+    /**
+     * ============================================
+     * SECCIÓN 5: ALERTAS DE BOTONES DE ACCIÓN
+     * ============================================
+     */
+    document.querySelectorAll('.btn-green, .btn-comprar, .btn-azul, .btn-login, #probarGratis, #comprarAhoraHero, #footerTrialBtn, #freeTrialBtn2')
+      .forEach(btn => {
+        btn.addEventListener('click', () => alert('🚀 ¡Gracias! Un asesor Siigo Fiscal te contactará.'));
       });
-    });
-
-    // Botones generales que envían a WhatsApp
-    const whatsappNumber = "525529079997";
-    function sendWhatsapp(message) {
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
-    }
-
-    document.querySelectorAll('.btn-green, .btn-comprar, .btn-azul, .btn-login, #probarGratis, #comprarAhoraHero, #footerTrialBtn, #freeTrialBtn2').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        if(btn.classList.contains('btn-comprar') || btn.classList.contains('btn-asesor-outline')) return;
-        sendWhatsapp("Hola, estoy interesado en conocer más sobre Siigo Fiscal. Me gustaría recibir información.");
-      });
-    });
   </script>
 </body>
 
