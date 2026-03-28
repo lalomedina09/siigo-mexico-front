@@ -148,7 +148,7 @@
     }
 
     .logo img {
-      height: 45px;
+      height: 60px;
       width: auto;
     }
 
@@ -935,7 +935,7 @@
     }
 
     .footer-logo img {
-      height: 50px;
+      height: 100px;
       width: auto;
       filter: brightness(0) invert(1);
     }
@@ -1079,7 +1079,7 @@
   <div class="main-header">
     <div class="container-custom">
       <div class="navbar-custom">
-        <div class="logo"><img src="logo-siigo-fiscal-1.svg" alt="Siigo Fiscal" onerror="this.src='https://placehold.co/150x45/009dfe/white?text=Siigo+Fiscal'"></div>
+        <div class="logo"><img src="assets/logo-siigo-fiscal-1.svg" alt="Siigo Fiscal" onerror="this.src='https://placehold.co/150x45/009dfe/white?text=Siigo+Fiscal'"></div>
         <div class="mobile-menu-icon" id="mobileMenuToggle"><i class="fas fa-bars"></i></div>
         <div class="nav-links" id="navLinks">
           <a href="#planes-precios" class="menu-link">Planes y precios</a>
@@ -1087,7 +1087,7 @@
           <a href="#prueba-gratis" class="menu-link">Prueba gratis</a>
           <a href="#beneficiados" class="menu-link">Contadores</a>
           <a href="#funciones" class="menu-link">📢 Siigo Fiscal <span class="badge-new">🆕</span></a>  
-          <button class="btn-login">Iniciar sesión</button>
+          <button class="btn-login">Crear cuenta</button>
         </div>
       </div>
     </div>
@@ -1313,43 +1313,366 @@
   </div>
 
   <!-- FOOTER con nubes animadas y datos de contacto -->
-  <footer>
-    <img src="assets/nubes-footer.png" alt="Nubes" class="footer-nubes" onerror="this.style.display='none'">
-    <div class="container-custom">
-      <div class="footer-logo"><img src="logo-siigo-fiscal-1.svg" alt="Siigo Aspel" onerror="this.src='https://placehold.co/150x50/ffffff/009dfe?text=Siigo+Aspel'"></div>
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Nosotros</h4><a>¿Quiénes somos?</a><a>Alianzas estratégicas</a><a>Certificaciones</a><a>Por qué Siigo</a>
+  <!-- FOOTER con nubes animadas y datos de contacto mejorados -->
+<footer>
+  <img src="assets/nubes-footer.png" alt="Nubes" class="footer-nubes" onerror="this.style.display='none'">
+  <div class="container-custom">
+    <!-- Sección logo + texto distribuidor autorizado en同一行 -->
+    <div class="footer-header">
+      <div class="footer-logo">
+        <img src="assets/sello-web-positivo1.png" alt="Siigo Fiscal" onerror="this.src='https://placehold.co/180x60/009dfe/white?text=Siigo+Fiscal'">
+      </div>
+      <div class="distribuidor-info">
+        <img src="sello-web-positivo1.png" alt="Distribuidor Autorizado" class="distribuidor-sello">
+        <div class="distribuidor-texto">
+          <strong>Distribuidor Autorizado Siigo Fiscal</strong><br>
+          <span>Somos distribuidores oficiales certificados por Siigo Aspel. Garantizamos soporte especializado, asesoría personalizada y los mejores precios en soluciones fiscales y contables para México.</span>
         </div>
-        <div class="footer-col">
-          <h4>Soluciones</h4><a>Siigo Nube</a><a>Siigo Fiscal</a><a>COI</a><a>NOI SAE</a><a>Facture</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contenido</h4><a>Blog</a><a>Eventos</a><a>Testimonios</a><a>Webinars</a><a>Mapa del sitio</a><a>Sugerencias</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contáctanos</h4>
-          <div class="contact-info">
-            <p><i class="fas fa-phone-alt"></i> CDMX: 55 2907 9997</p>
-            <p><i class="fas fa-phone-alt"></i> Monterrey, N.L.: 81 1352 2222</p>
-            <p><i class="fas fa-phone-alt"></i> San Luis Potosí, SLP: 444 669 1970</p>
-            <p><i class="fas fa-phone-alt"></i> Los Cabos, BCS: 624 211 7712</p>
-            <p><i class="fas fa-envelope"></i> contacto@siigofiscalmx.com</p>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <!-- Sucursales con mejor visualización -->
+      <div class="footer-col sucursales-col">
+        <h4><i class="fas fa-map-marker-alt"></i> Nuestras Sucursales</h4>
+        <div class="sucursales-lista">
+          <div class="sucursal-item">
+            <i class="fas fa-city"></i>
+            <div class="sucursal-detalle">
+              <strong>CDMX</strong>
+              <span><i class="fas fa-phone-alt"></i> 55 2907 9997</span>
+            </div>
+          </div>
+          <div class="sucursal-item">
+            <i class="fas fa-city"></i>
+            <div class="sucursal-detalle">
+              <strong>Monterrey, N.L.</strong>
+              <span><i class="fas fa-phone-alt"></i> 81 1352 2222</span>
+            </div>
+          </div>
+          <div class="sucursal-item">
+            <i class="fas fa-church"></i>
+            <div class="sucursal-detalle">
+              <strong>San Luis Potosí, SLP</strong>
+              <span><i class="fas fa-phone-alt"></i> 444 669 1970</span>
+            </div>
+          </div>
+          <div class="sucursal-item">
+            <i class="fas fa-umbrella-beach"></i>
+            <div class="sucursal-detalle">
+              <strong>Los Cabos, BCS</strong>
+              <span><i class="fas fa-phone-alt"></i> 624 211 7712</span>
+            </div>
+          </div>
+          <div class="sucursal-item contacto-email">
+            <i class="fas fa-envelope"></i>
+            <div class="sucursal-detalle">
+              <strong>Correo electrónico</strong>
+              <span><i class="fas fa-inbox"></i> contacto@siigofiscalmx.com</span>
+            </div>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Políticas</h4><a>Condiciones de uso</a><a>Términos y condiciones</a><a>Aviso de privacidad</a><a>Política de privacidad</a><a>Contadores aliados</a>
-        </div>
-        <div class="footer-col">
-          <h4>Países</h4><a>Colombia</a><a>Chile</a><a>Ecuador</a><a>México</a><a>Perú</a><a>Uruguay</a>
+      </div>
+
+      <div class="footer-col">
+        <h4><i class="fas fa-globe-americas"></i> Países</h4>
+        <div class="paises-lista">
+          <a><i class="fas fa-flag-checkered"></i> Colombia</a>
+          <a><i class="fas fa-flag-checkered"></i> Chile</a>
+          <a><i class="fas fa-flag-checkered"></i> Ecuador</a>
+          <a><i class="fas fa-flag-checkered"></i> México</a>
+          <a><i class="fas fa-flag-checkered"></i> Perú</a>
+          <a><i class="fas fa-flag-checkered"></i> Uruguay</a>
         </div>
       </div>
-      <div class="distribuidor-logo">
-        <img src="sello-web-positivo1.png" alt="Distribuidor Autorizado" style="max-height: 60px;">
+
+      <div class="footer-col">
+        <h4><i class="fas fa-headset"></i> Atención al cliente</h4>
+        <a><i class="fab fa-whatsapp"></i> WhatsApp: 55 2907 9997</a>
+        <a><i class="fas fa-clock"></i> Horario: L-V 9:00 a 18:00</a>
+        <a><i class="fas fa-envelope"></i> soporte@siigofiscalmx.com</a>
+        <a><i class="fas fa-chalkboard-user"></i> Asesoría especializada</a>
       </div>
-      <div class="copyright" style="text-align:center; margin-top:40px; font-size:0.7rem">Copyright© Todos los Derechos Reservados SICONT MEX S.A. DE CV México 2023</div>
     </div>
-  </footer>
+
+    <div class="copyright">
+      <p>Copyright© Todos los Derechos Reservados SICONT MEX S.A. DE CV México 2023</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Estilos adicionales para el footer mejorado */
+  footer {
+    background: var(--azul-base);
+    color: #e2e8f0;
+    padding: 50px 0 30px;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-nubes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+    animation: cloudMove 8s ease-in-out infinite;
+  }
+
+  @keyframes cloudMove {
+    0% { transform: translateX(-20px) translateY(0); }
+    50% { transform: translateX(20px) translateY(-10px); }
+    100% { transform: translateX(-20px) translateY(0); }
+  }
+
+  /* Header del footer: logo + info distribuidor */
+  .footer-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 45px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-logo img {
+    height: 90px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .distribuidor-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 24px;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
+    flex-wrap: wrap;
+  }
+
+  .distribuidor-sello {
+    height: 55px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  }
+
+  .distribuidor-texto {
+    max-width: 400px;
+  }
+
+  .distribuidor-texto strong {
+    color: white;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .distribuidor-texto span {
+    font-size: 0.75rem;
+    color: #cbd5e6;
+    line-height: 1.4;
+  }
+
+  /* Grid del footer */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 40px;
+  }
+
+  .footer-col h4 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 3px solid var(--verde-base);
+    padding-left: 12px;
+  }
+
+  .footer-col h4 i {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  .footer-col a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e2e8f0;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .footer-col a:hover {
+    color: white;
+    transform: translateX(5px);
+  }
+
+  .footer-col a i {
+    width: 24px;
+    color: #ffffff;
+  }
+
+  /* Sucursales estilo mejorado */
+  .sucursales-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sucursal-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 15px;
+    border-radius: 12px;
+    transition: all 0.2s;
+  }
+
+  .sucursal-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(5px);
+  }
+
+  .sucursal-item > i {
+    font-size: 1.3rem;
+    color: #ffffff;
+    min-width: 32px;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .sucursal-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .sucursal-detalle strong {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .sucursal-detalle span {
+    font-size: 0.8rem;
+    color: #cbd5e6;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .sucursal-detalle span i {
+    font-size: 0.7rem;
+    color: #ffffff;
+  }
+
+  .contacto-email {
+    background: rgba(122, 194, 58, 0.15);
+    border-left: 2px solid var(--verde-base);
+  }
+
+  /* Países lista */
+  .paises-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .paises-lista a {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    display: inline-flex;
+    transition: all 0.2s;
+  }
+
+  .paises-lista a:hover {
+    background: var(--verde-base);
+    transform: translateY(-2px);
+  }
+
+  .paises-lista a i {
+    width: auto;
+    margin-right: 6px;
+  }
+
+  /* Copyright */
+  .copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.7rem;
+    color: #cbd5e6;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .distribuidor-info {
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .sucursal-item {
+      padding: 10px 12px;
+    }
+    
+    .paises-lista {
+      justify-content: center;
+    }
+    
+    .footer-col h4 {
+      justify-content: center;
+      border-left: none;
+      border-bottom: 2px solid var(--verde-base);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+    
+    .footer-col a {
+      justify-content: center;
+    }
+    
+    .sucursal-item {
+      justify-content: flex-start;
+    }
+  }
+</style>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
